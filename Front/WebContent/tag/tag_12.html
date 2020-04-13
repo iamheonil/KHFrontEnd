@@ -12,54 +12,132 @@
     <hr>
 
     <br>
-    
+
     <form action="" method="get">
 
-<!-- id속성 : HTML문서내에서 태그에 고유한 이름을 붙이는 속성 -->
-<!-- name속성 : FORM 태그를 이용하여 서버로 전송될 때 변수명으로 사용 -->
-        
+        <!-- id속성 : HTML문서내에서 태그에 고유한 이름을 붙이는 속성 -->
+        <!-- name속성 : FORM 태그를 이용하여 서버로 전송될 때 변수명으로 사용 -->
+
         <label>
             아이디 : <input type="text" name="userid" placeholder="아이디를 입력하세요"> <br><br>
         </label>
 
         <label for="pw">패스워드 : </label>
-        
+
         <input type="password" name="userpw" id="pw" placeholder="비밀번호를 입력하세요"> <br><br>
 
         <label>
-        체크 1번<input type="checkbox" name="chk" value="A"><br><br>
+            체크 1번<input type="checkbox" name="chk" value="A"><br><br>
         </label>
-        
+
         <label for="chk2">
-        체크 2번<input type="checkbox" name="chk2" id="chk2" value="B"><br><br>
+            체크 2번<input type="checkbox" name="chk2" id="chk2" value="B"><br><br>
         </label>
-        
+
         <label for="chk3">
-        체크 3번<input type="checkbox" name="chk3" id="chk3" value="C" checked><br><br>
+            체크 3번<input type="checkbox" name="chk3" id="chk3" value="C"><br><br>
         </label>
-        
-<!-- Check 박스는 체크하지 않으면 아예 전달 파라미터를 생성하지 않는다. -->
-<!-- Value를 적용하지 않으면 선택된 checkbox는 "on" 을 값으로 전달함 -->
-<!-- Value값이 적용되어 있으면 선택된 Checkbox는 Value값을 전달함 -->
-<!-- name속성이 같은 checkbox가 여러 개 있어도 각각의 항목으로 전달한다. -->
-        
+
+        <!-- Check 박스는 체크하지 않으면 아예 전달 파라미터를 생성하지 않는다. -->
+        <!-- Value를 적용하지 않으면 선택된 checkbox는 "on" 을 값으로 전달함 -->
+        <!-- Value값이 적용되어 있으면 선택된 Checkbox는 Value값을 전달함 -->
+        <!-- name속성이 같은 checkbox가 여러 개 있어도 각각의 항목으로 전달한다. -->
+
         <label><input type="radio" name="gender" value="m">남</label>
         <label><input type="radio" name="gender" value="f">여</label>
         <br><br>
-        
+
         <input type="button" value="확인" onclick="alert('gd');">
         <br><br>
-        
-        <input type="submit" value="전송">
 
-		<!-- radio는 checkbox 와 비슷한 동작을 한다. -->
+        <button>타입 미지정 submit 자동</button>
+        <br><br>
+
+        <button type="button">아무일도 없는 버튼</button>
+        <br><br>
+
+        <input type="file" value="파일" name="f">
+        <br><br>
+
+        <input type="file" value="파일" name="f" multiple="multiple">
+        <br><br>
+
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+        <br><br>
+
+        Number <input type="number" name="num" min="1" max="100" step="2" value="51">
+        <br><br>
+
+        EMail <input type="email" name="e">
+        <br><br>
+
+        URL <input type="url" name="u">
+        <br><br>
+
+        range <input type="range" name="r" min="30" max="200" step="2" value="150">
+        <br><br>
+
+        Color <input type="color" name="c">
+        <br><br>
+
+        <!-- 전송형식 yyyy - mm - dd -->
+        Date <input type="date" name="d">
+        <br><br>
+
+        <!-- 전송형식 HH24:MI -->
+        Time <input type="time" name="t">
+        <br><br>
+
+        <!-- 데이터 목록 생성 태그 -->
+        <datalist id="fruit">
+            <option value="apple">사과</option>
+            <option value="banana">바나나</option>
+            <option value="cherry">체리</option>
+        </datalist>
+        <!-- <datalist> 는 단독으로 사용하는것이 아니고 input과 연결하여 사용해야한다 -->
+
+        <!-- 연결 -->
+        <label for="fr">과일</label>
+        <input list="fruit" name="dl" id="fr">
+        <br><br>
+        
+        
+        <br>
+
+        <!-- radio는 checkbox 와 비슷한 동작을 한다. -->
         <!-- 선택된 항목의 값이 "on"으로 전달된다 -->
         <!-- value속성의 값을 넣으면 해당 값으로 전달된다 -->
         <!-- name이 같은 radio는 중복 선택이 안된다 -->
         <!-- name이 같은 radio들을 같은 라디오 그룹(Radio group)이라고 한다 -->
-        
-        <br><br>
-        
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
     </form>
 
 </body>

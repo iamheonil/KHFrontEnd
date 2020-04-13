@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+
+<body>
+
+    <form action="" method="get">
+        <fieldset style="width: 250px">
+            <legend>인적사항</legend>
+            <table>
+                <tr>
+                    <td> <label for="userId">아이디</td></label>
+                    <td> <input type="text" name="userId" id="userId" placeholder="아이디 입력"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="password">비밀번호</td></label>
+                    <td><input type="password" name="password" id="password"><br></td>
+                </tr>
+                <tr>
+                    <td> <label for="email">이메일</td></label>
+                    <td><input type="email" name="email" id="email"><br></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                       <label for="genderm"><input type="radio" name="gender" id="genderm" value="m">남</label>
+                        <label for="genderf"><input type="radio" name="gender" id="genderf" value="f">여</label></td>
+                </tr>
+                <tr>
+                    <td><label for="married">결혼여부</td></label>
+                    <td><input type="checkbox" name="married" id="married"><br></td>
+                </tr>
+                <datalist id="location">
+                    <option value="seoul">서울</option>
+                    <option value="gyeonggi">경기</option>
+                    <option value="jeonla">전라</option>
+                    <option value="gyeongsang">경상</option>
+                </datalist>
+                <tr>
+                    <td><label for="loc">지역</td></label>
+                    <td><input list="location" id="loc" name="loc"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="ta">하고싶은 말<br></td></label>
+                    <td> <textarea placeholder="입력하세요" name="ta" id="ta" style="width: 150px; height: 40px"></textarea><br></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="제출"> <input type="reset" value="취소">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
