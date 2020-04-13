@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cascading Style Sheets</title>
+
+    <!-- 임베디드 방식의 스타일 적용, <style> 태그를 사용한다 -->
+    <style type="text/css">
+        /* CSS 주석 */
+
+        /* 선택자 (Selector) 를 이용한다 */
+
+        /* p태그 선택자(모든 p 태그에게 적용된다) */
+
+        p {
+            font-size: 30px;
+            color: crimson;
+        }
+
+        /*  id 선택자 */
+        #hello {
+            color: darkcyan;
+        }
+
+        /* 별도의 CSS파일을 로드하는 방식 */
+
+    </style>
+
+</head>
+
+<body>
+    <!-- 인라인 방식 -->
+    <p style="color: dodgerblue;">안녕하세요</p>
+
+    <!-- Embedded 방식 -->
+    <p style="color: inherit;">처음 만난 사람들도 안녕하세요</p>
+
+    <!-- 임베디드 + 선택자 -->
+    <p id="hello">훠어 어어어어</p>
+
+    <!--  -->
+    <span>안녕하세요</span>
+
+</body>
+
+</html>
