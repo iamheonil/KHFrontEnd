@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        /* div요소에 마우스를 올려놓으면 반응하는 선택자 */
+        div:hover {
+            background-color: skyblue;
+        }
+
+        /* span태그를 눌렀을 때 (onMouseDown) 반응 */
+        span:active {
+            color: orange;
+            font-size: 30px;
+        }
+        
+        /* span 요소에 마우스를 올려놓으면 반응 */
+        span:hover {
+            color: deepskyblue;
+        }
+        
+        /* button 태그에는 적용되지 않는다. */
+        input[type="button"]:active {
+            color: lightskyblue;
+        }
+        
+        /* 태그의 방문 상태에 따른 선택자 */
+        a:link {
+            color:green;
+        }
+        
+        a:visited {
+            color:red;
+        }
+        
+        :disabled {
+            font-size: 5px;
+        }
+        
+        :enabled {
+            font-style: italic;
+            font-size: 15px;
+        }
+        
+        :checked {
+            width: 50px;
+            height: 50px;
+        }
+        
+        :focus {
+            color: tomato;
+        }
+        
+        /* 비어있는것이 아니라 자식이 없는 요소에 대하여 */
+        /* 다른 선택자와 붙여서 사용해야한다. */
+        
+        div:empty {
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <span>span 태그 안 쪽</span>
+        span 태그 바깥쪽 <br>
+
+        <input type="button" value="확인">
+        <button>버른</button>
+        <br>
+        <hr>
+
+        <a href="http://www.naver.com">네이버</a>
+        <a href="http://www.daum.net">다음</a>
+        <a href="http://www.daum.net">다음</a>
+
+        <br>
+        <hr>
+
+        <label><input type="checkbox">확인</label>
+        <label><input type="radio">라디오</label>
+
+        <button disabled="disabled">버튼</button>
+        <br>
+        <hr>
+
+        <div></div>
+
+        <input type="text">
+    </div>
+
+</body>
+
+</html>

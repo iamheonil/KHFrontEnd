@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        
+        /* .abc 라는 이름을 가진 클래스 */
+        .abc {
+            
+        }
+
+        /* h1태그의 자손 .abc */
+        h1 .abc {
+            
+        }
+        
+        /* class가 abc인 h1 태그요소 */
+        h1.abc{
+            
+        }
+        
+        /* id가 abc인 h1 태그요소 */
+        h1#abc {
+            
+        }
+        /* */
+        
+        /* 속성중 title을 가지고 있는 태그를 찾는다 */
+        [title] {
+            color: red;
+        }
+        
+        /* 속성중 class를 가지고 있는 태그를 찾는다 */
+/*
+        [class] {
+            border: 1px solid green;
+        }
+*/
+        
+        /* class 속성을 가지고 있는 div 태그 요소 */
+        div[class] {
+            border: 1px solid green;
+        }
+        
+        /* title 속성의 값으로 "greeting"을 가지고 있는 H1 태그 요소 */
+        h1[title="greeting"] {
+            border: 1px solid blue;
+        }   
+        
+        /* title 속성의 값으로 "greeting"이라는 단어를 완전하게 포함하는 h1 태그 요소 */
+        h1[title~="greeting"] {
+            border: 1px solid red;
+        }
+        
+        /* 클래스 이름 "abc"라는 단어를 포함하고 있는 h1 태그 */
+        /* ~=가 아닌 =만 존재한다면 포함하고 있으면 안되고 완전하게 일치해야한다. */
+        /* = 는 너무 어려우니 h1.abc 와 같은 식으로 표현하는것도 괜찮다. */
+        h1[class~="abc"] {
+            background: yellow;
+        }
+        
+        /* */
+        
+        /* 클래스의 값이 te로 시작하는 태그 검색 */
+        h1[class^="te"] {
+            font-size: 100px;
+        }
+        
+        /* 클래스의 값이 st로 끝나는 태그 검색 */
+        h1[class$="st"] {
+            border: 1px dotted orange;
+        }
+        
+        /* class의 값으로 "d"를 포함하는 h1 태그 요소 */
+        h1[class*="d"] {
+            background: tomato;
+        }
+        
+        /* class의 값이 abc이거나 abc- 로 시작하는 태그 요소 검색 */
+        h1[class|="abc"] {
+            font-size: 75px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 class="abc test dd" title="hi">Hello</h1>
+
+    <h1 class="abc st">안녕하세요</h1>
+
+    <h1 class="abc-css" title="greeting">반가워요!</h1>
+
+    <div class>여기는 Div</div>
+</body>
+
+</html>

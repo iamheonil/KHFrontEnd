@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        div#myDiv {
+            /* 공백 없이 사용했을때 : id가 myDiv인 div 태그 선택자 */
+            color: #666;
+        }
+
+        div #myDiv {
+            /* div와 id사이에 공백을 넣고 사용했을때 : div태그의 자손인 id가 myDiv인 요소 */
+            color: red;
+        }
+
+        /*
+        div ul {
+             div 클래스의 ul 태그들 
+            border: 1px solid #808;
+            
+        }
+        */
+
+        #myDiv ul {
+            /* id가 myDiv인 요소의 하위요소 중에서 모든 ul태그 요소들 선택 */
+            border: 1px solid #808;
+        }
+
+        #myDiv > ul {
+            /* id가 myDiv인 요소의 자식요소 중에서 모든 ul태그 요소들 선택 */
+            border: 1px dotted tomato;
+        }
+
+        /* 선택자들에게는 적용 우선순위가 있다 자식과 자손 선택자의 우선순위는 같다 */
+        /* 적용우선순위가 같은 선택자들은 나중에 작성한 코드가 반영된다. */
+
+    </style>
+</head>
+
+<body>
+
+    <div id="myDiv">
+        <ul>
+            <li>1</li>
+            <ul>
+                <li>2</li>
+                <ul>
+                    <li>2-1</li>
+                    <li>2-2</li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        h1+p {
+            /* 바로 뒤에 위치한 한 개의 태그만 선택한다. */
+            background-color: yellow;
+        }
+
+        h1+h1 {
+            /* 적용 되지 않는다 */
+            background-color: green;
+        }
+
+/*
+        h1~h1 {
+             적용된다. 
+            background-color: green;
+        }
+*/
+        
+        h1~p {
+            border: 1px solid red;
+        }
+
+/*
+        h1 + .choco {
+        적용 대상 없음
+            color: chocolate;
+        }
+*/
+    
+        h1 ~ .choco {
+            background: chocolate;
+        }
+        
+        .choco + .choco {
+            color: blue;
+        }
+        
+        p + p {
+         font-style: italic;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <p>첫번째</p>
+    <h1>두번째</h1>
+    <p>세번째</p>
+    <p class="choco">네번째</p>
+    <p class="choco">다섯번째</p>
+    <h1>여섯번째</h1>
+    <p>일곱번째</p>
+    <p>여덟번째</p>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        span::before {
+            content: "\A span before ";
+            color: tomato;
+            /* 공백 허용, 줄바꿈 허용 */
+            white-space: pre;
+        }
+
+        span::after {
+            content: " span After \A ggg";
+            color: dodgerblue;
+        }
+
+        .test {
+            /* 요소가 공백문자(띄어쓰기, 개행문자)를 처리하는 방식 지정 */
+            /* nowrap : 띄어쓰기, 개행 모두 띄어쓰기 한 개로 바꾼다 */
+            /* pre : 공백 여러개는 적용, 줄바꿈도 적용, 자동 줄바꿈은 적용 안된다. */
+            /* pre-line : 공백 사용 안된다, 개행과 자동줄바꿈은 적용한다. */
+            /* pre-wrap : 공백, 개행, 자동줄바꿈 모두 적용한다.*/
+
+            white-space: nowrap;
+
+            /* white-space: pre;*/
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <p>첫번째 p</p>
+    <span>두번째 span</span>
+    <div class="new">세번째 div</div>
+    <p class="test">네번째 p. this is a p tag this is a p tag this is a p tag this is a p tag
+        나의 이름과, 사랑과 불러 있습니다.<br>
+        불러 슬퍼하는 별이 까닭입니다. 가을로 별 까닭이요, 계십니다.<br>
+        이런 그리고 지나고 한 같이 헤일 아이들의 버리었습니다. <br>
+        시와 가을 북간도에 풀이 이름을 아직 어머님, 까닭입니다.<br>
+        별이 북간도에 가슴속에 하늘에는 계절이 별 위에 쉬이 그러나 계십니다. <br>
+        너무나 북간도에 어머니 슬퍼하는 계절이 풀이 마디씩 무성할 어머님, 버리었습니다. <br>
+        옥 마디씩 남은 별 지나고계십니다.<br>
+    </p>
+
+</body>
+
+</html>
