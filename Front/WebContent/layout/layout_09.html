@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div {
+            width: 250px;
+            border: 1px solid #ccc;
+        }
+
+        span {
+            /* 테두리는 인라인 요소에 적절하지 않다 */
+            /* border: solid 1px red; */
+
+            background-color: palevioletred;
+            
+            /* width height 적용되지 않는다.*/
+            width: 100px;
+            height: 1000px;
+            
+            /* 줄간격(기본 값 1.35em) */
+            line-height: 1.8em;
+            
+            /* 글자 크기 (기본 값 16px) */
+            font-size: 18px;
+            
+            padding: 2px;
+            
+            margin: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <span>Span 1</span>
+        <span>Span 2</span>
+        <span>Span3Span3Span3Span3Span3 Span3Span3Span3Span3Span3</span>
+    </div>
+
+</body></html>

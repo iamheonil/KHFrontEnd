@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div {
+            width: 250px;
+            height: 200px;
+        }
+
+        #div1 {
+            border: 5px solid skyblue;
+            float: left;
+        }
+
+        #div2 {
+            border: 5px solid gray;
+            float: right;
+        }
+
+        #div3 {
+            border: 5px solid purple;
+            float: left;
+        }
+
+        .clearbox {
+            clear: both;
+
+            width: 0;
+            height: 0;
+
+        }
+
+        .content {
+            margin: 35px;
+        }
+        
+        #pDiv {
+            width: auto;
+            height: auto;
+            border: 1px solid red;
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div id="div1">DIV1 요소</div>
+    <div id="div2">DIV2 요소</div>
+    <div class="clearbox"></div>
+
+    <div id="pDiv" class="clearfix">
+        <div id="div3">DIV3 요소</div>
+        <p class="content">말 이네들은 나는 하나에 멀리 것은 무엇인지 있습니다. 사람들의 나는 어머니, 헤는 하나의 내일 내 가을로 하나 있습니다. 말 이네들은 나는 하나에 멀리 것은 무엇인지 있습니다. 사람들의 나는 어머니, 헤는 하나의 내일 내 가을로 하나 있습니다.</p>
+    </div>
+</body></html>

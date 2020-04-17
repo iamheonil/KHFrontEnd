@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        span {
+            font-size: 29px;
+        }
+        
+        #span1 {
+            background-color: tomato;
+            float: left;
+        }
+       
+        #span2 {
+            background-color: green;
+            float: right;
+        }
+        
+        #span3 {
+            background-color: skyblue;
+        }
+        
+        div {
+            text-align: center;
+            width: 940px;
+            
+            /* 외부 여백 : 상하X 좌우반반 */
+            margin: auto;
+            
+            /* block요소의 내부 컨텐츠 정렬 : text-align 사용*/
+            /* block요소의 외부 컨텐츠 정렬 : margin: 0 auto; 사용*/
+            
+            /* ** 외부 정렬을 하려면 width가 설정되어있어야 한다. */
+        }
+        
+        body {
+            /* Block요소는 부모요소에서 Text-align을 적용해도 화면에서 적용되지 않는다. */
+            text-align: center;
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+<div>
+    <span id="span1">Span1</span><span id="span2">Span2</span><span id="span3">Span3</span>
+</div>
+</body>
+
+</html>

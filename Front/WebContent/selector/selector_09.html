@@ -7,14 +7,15 @@
 
     <style type="text/css">
         span::before {
-            content: "\A span before ";
+            content: "\A span \a \a before";
             color: tomato;
+            background-color: gray;
             /* 공백 허용, 줄바꿈 허용 */
             white-space: pre;
         }
 
         span::after {
-            content: " span After \A ggg";
+            content: " span After \A ggg \a";
             color: dodgerblue;
         }
 
@@ -30,6 +31,34 @@
             /* white-space: pre;*/
         }
 
+        div.new::after {
+            content: "new";
+
+            font-size: 10px;
+            background-color: #f66;
+            color: #fff;
+            padding: 0 2px;
+            /* 테두리의 모서리를 둥글게 만들어준다. */
+            border-radius: 4px;
+
+        }
+
+        p::first-line {
+            color: skyblue
+        }
+
+        p::first-letter {
+            color: red;
+            font-size: 20px;
+        }
+
+        p:not(.new) {
+            content: "old";
+            color: white;
+            background-color: dimgray;
+            padding: 0 2px;
+            border-radius: 4px;
+        }
     </style>
 
 </head>
@@ -49,6 +78,4 @@
         옥 마디씩 남은 별 지나고계십니다.<br>
     </p>
 
-</body>
-
-</html>
+</body></html>
