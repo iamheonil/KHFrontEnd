@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #wrapper {
+            /* table과 table-layout, 자식 요소에서 table-cell 3개를 설정해주면
+            내용물의 크기가 일정하도록 알아서 조정된다.*/
+            display: table;
+            table-layout: fixed;
+            width: 980px;
+            margin: 0 auto;
+
+            /* border: 1px solid #ccc; */
+        }
+
+        #wrapper>div {
+            width: 25%;
+            height: 150px;
+            background-color: dodgerblue;
+            display: table-cell;
+            /* border: 1px solid */
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- border 없이 알맞게 배치해보기-->
+    <div id=wrapper>
+        <!-- 980 px -->
+        <div style="background: red;">AAAAAㅁㅁㅁㅁㅁ</div>
+        <div style="background: brown;">B</div>
+        <div style="background: purple;">C</div>
+        <div style="background: beige;">D</div>
+        <div style="background: red;">A</div>
+        <div style="background: brown;">B</div>
+        <div style="background: purple;">C</div>
+        <div style="background: beige;">D</div>
+        <div style="background: red;">A</div>
+    </div>
+
+    <br>
+    <br>
+
+    <hr>
+
+    <br>
+    <br>
+
+    <table border="1" style="border-collapse: collapse">
+        <tr>
+            <td>AA</td>
+            <td>BB</td>
+            <td>CC</td>
+        </tr>
+        <tr>
+            <td>DD</td>
+            <td>EE</td>
+            <td>FF</td>
+        </tr>
+    </table>
+</body></html>

@@ -4,23 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+
     <style type="text/css">
         * {
             padding: 0px;
             margin: 0px;
         }
-        
-       
-        
-        
+
+        #wrapper {
+            text-align: center;
+            width: 980px;
+            margin: auto;
+
+            /* border: 1px solid #ccc; */
+        }
+
+        #wrapper>div {
+            display: inline-block;
+            width: 13.9%;
+            height: 130px;
+
+            background-color: dodgerblue;
+            /* border: 1px solid */
+        }
     </style>
-    
+
 </head>
 
 <body>
 
-
-</body>
-
-</html>
+    <!-- border 없이 알맞게 배치해보기-->
+    <div id=wrapper>
+        <!-- 980 px -->
+        <div style="background: red;">A</div>
+        <div style="background: brown;">B</div>
+        <div style="background: purple;">C</div>
+        <div style="background: beige;">D</div>
+        <div style="background: green;">E</div>
+        <div style="background: red;">F</div>
+        <div>G</div>
+    </div>
+</body></html>
