@@ -10,17 +10,17 @@
             padding: 0px;
             margin: 0px;
         }
-        
+
         .wrapper {
             text-align: center;
             margin: auto;
             width: 970px;
         }
-        
+
         #colorLine {
-            width: 100%;
-            height: 15px;
-            background: yellow;
+            width: auto;
+            height: 35px;
+            background: url('https://s.pstatic.net/static/www/img/uit/2020/bg_ban_top_v1.png')
         }
 
         ul>li {
@@ -29,6 +29,31 @@
             margin: 20px;
             display: inline-block;
         }
+
+        .imgBox {
+            width: 320px;
+            height: 260px;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+
+            position: relative;
+
+            left: 100px;
+
+            -moz-box-shadow: 8px 7px 8px 0px gray;
+            -webkit-box-shadow: 8px 7px 8px 0px gray;
+            box-shadow: 8px 7px 8px 0px gray;
+            /* x축이동 y축이동 흐려짐 펼치기 색상; 순서 */
+
+            transform: rotate(5deg);
+            -webkit-transform: rotate(5deg);
+            -o-transform: rotate(5deg);
+            -ms-transform: rotate(5deg);
+            -moz-transform: rotate(5deg);
+            /* 요소의 모양 변형 */
+        }
+
     </style>
 
 </head>
@@ -36,9 +61,10 @@
 <body>
     <div class=wrapper>
         <header>
-           <div id="colorLine">
-               
-           </div>
+            <div id="colorLine">
+                <p style>Header</p>
+            </div>
+            <br>
             <h1>시맨틱 태그 레이아웃</h1>
             <h3>Semetic Tag Layout</h3>
         </header>
@@ -61,7 +87,7 @@
 
             <article>
                 <p>여긴 아티클 내용물을 적는 곳</p>
-
+                <br>
                 <div class="imgBox">
                     <img src="../Koreancow.jpg" width="300" height="200" title="음메!!">
                     <br>
@@ -76,4 +102,6 @@
             &copy; KIM HEONIL 2020
         </footer>
     </div>
-</body></html>
+</body>
+
+</html>

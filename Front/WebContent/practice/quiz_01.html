@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>피자 주문 페이지</title>
+</head>
+
+<body>
+
+    <!--
+   <form action="#" method="get">
+       <table>
+       <tr>
+       <td>
+        고객명 :</td>
+        <td> <input type="text" name="name">
+        </td>
+        </tr>
+        <tr>
+        <td>전화번호 :</td> 
+        <td><input type="text" name="tel"></td>
+        </tr>
+        <tr>
+        <td>E-Mail : </td>
+        <td><input type="email" name="email"></td>
+        </tr>
+   </table>
+-->
+
+    <form action="#" method="POST">
+        <label>
+            고객명 : <input type="text" name="name"> <br>
+        </label>
+        <br>
+        <label>
+            전화번호 : <input type="tel" name="tel"> <br>
+        </label>
+        <br>
+        <label>
+            E-Mail : <input type="email" name="email"> <br></label>
+        <br>
+        <fieldset style="width: 200px;">
+            <legend>피자 사이즈</legend>
+            <br>
+            <label>
+            <input type="radio" name="size" value="small">Small <br>
+            </label>
+            <br>
+            <label>
+            <input type="radio" name="size" value="medium" checked="ckecked">Medium <br>
+            </label>
+            <br>	
+            <label>								
+            <input type="radio" name="size" value="Large">Large <br>
+            </label>
+            <br>
+        </fieldset>
+        <br>
+        <fieldset style="width: 200px;">
+            <legend>토핑선택</legend>
+            <br>
+            <label>
+            <input type="checkbox" name="topping" value="bacon">베이컨 <br>
+            </label>
+            <br>
+            <label>
+            <input type="checkbox" name="topping" value="cheeze">치즈 <br>
+            </label>
+            <br>
+            <label>
+            <input type="checkbox" name="topping" value="onion">양파 <br>
+            </label>
+            <br>
+            <label>
+            <input type="checkbox" name="topping" value="mushroom">버섯 <br>
+            </label>
+            <br>
+        </fieldset>
+        <br>
+        <label>
+            희망배송시간 : <input type="time" name="wishtime" value="wishtime" min="09:00" max="23:00"><br>
+        </label>
+        <br>
+        <label>
+            배송시 요청사항 : <textarea name="plz"></textarea><br>
+        </label>
+        <br>
+        <input type="submit" value="주문하기">
+    </form>
+</body></html>
