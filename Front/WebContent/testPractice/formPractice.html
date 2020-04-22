@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+
+    <style type="text/css">
+        /* 메인 메뉴 */
+        .nav {
+            /* 리스트 스타일 써클 다 지워버리기 */
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* 
+        .nav > li
+        .nav li     셀렉터 차이에 결과 값이 바뀌니 유의.
+        */
+
+        .nav>li {
+            float: left;
+
+            /* 높이 조절하기 */
+            /* padding: 20px 0; */
+
+            line-height: 40px;
+            background-color: #84B1ED;
+            margin: 0.09px;
+            border: 1px solid white;
+            min-width: 150px;
+
+            /* Absolute 자식요소의 기준점으로 활용하기 위해 */
+            position: relative;
+
+        }
+
+        /* 메인 메뉴 */
+        .nav>li>a {
+            color: white;
+            text-decoration-line: none;
+            font-weight: bold;
+            font-family: HELVETICA, NANUMGOTHIC;
+            font-size: 18px;
+            margin: 0px 3px;
+            padding: 10px 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .nav>li>a:hover {
+            -webkit-transition: all 2s linear;
+            -moz-transition: all 2s linear;
+            -o-transition: all 2s linear;
+            transition: all 2s linear;
+
+            text-decoration-line: underline;
+            color: ghostwhite;
+        }
+
+        /* 하위 메뉴 */
+        .nav>li>ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0;
+            /* HTML 계층구조에서 빼는 설정 */
+            /* 부모요소인 <li>태그의 컨텐츠 영역을 차지하지 않도록 만들기 */
+            position: absolute;
+
+            width: 100%;
+            /* 서브메뉴 위치 조절 */
+            left: 1px;
+
+            color: white;
+        }
+
+        /* 서브 메뉴 항목 */
+        .nav>li>ul>li {
+            background: dodgerblue;
+
+
+
+            /* 서브메뉴는 평상시 보이지 않아야한다. */
+            /* 방법 1 */
+            /* display: none; */
+
+            /* 방법 2 */
+
+            line-height: 0;
+            height: 0;
+            font-size: 0;
+
+
+        }
+
+        .nav>li:hover>ul>li {
+            /* 방법 1에 대한 처리 */
+            display: list-item;
+
+            /* 방법 2에 대한 처리 */
+            /*
+            line-height: inherit; 
+            height: inherit;
+            font-size: inherit;
+*/
+            padding-left: 14px;
+
+            line-height: 40px;
+            height: 40px;
+            font-size: 18px;
+
+            /*
+            -webkit-transition: all 2s linear;
+            -moz-transition: all 2s linear;
+            -o-transition: all 2s linear;
+*/
+            transition: height 0.3s linear;
+        }
+
+        /* 서브메뉴 링크 텍스트 스타일 */
+        .nav>li>ul>li>a {
+            text-decoration: none;
+            color: #D1B6E1;
+            display: block;
+        }
+
+
+        .nav>li>ul>li>a:hover {
+            color: white;
+
+            -webkit-transition: all 0.4s linear;
+            -moz-transition: all 0.4s linear;
+            -o-transition: all 0.4s linear;
+            transition: all 0.4s linear;
+        }
+    </style>
+</head>
+
+<body>
+
+        <ul class="nav">
+            <li>HOME</li>
+            <li>세부메뉴</li>
+            <ul>
+                <li>공지사항</li>
+                <li>안공지사항</li>
+            </ul>
+            <li>게시판</li>
+            <ul>
+                <li>공지사항</li>
+                <li>비공지사항</li>
+            </ul>
+            <li>ABOUT</li>
+
+        </ul>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <fieldset style="width: 350px; ">
+        <legend>
+            개인 정보 입력
+        </legend>
+
+        <form action="#" method="get">
+            이름 : <input type="text" name="cname"> <br>
+            <br>
+            아이디 : <input type="text" name="cid"> <br>
+            <br>
+            비밀번호 : <input type="password" name="cpassword"> <br>
+            <br>
+            성별 : <input type="radio" name="gender" value="M">남
+            <input type="radio" name="gender" value="W">여
+            <br>
+            <br>
+            관심사 : <input type="checkbox" name="hobby1" value="연애">연애
+            <input type="checkbox" name="hobby2" value="축구">축구
+
+            <br>
+            <br>
+            하고 싶은 말
+            <textarea placeholder="하고 싶은 말" name="onetime"></textarea>
+            <br>
+            <br>
+            지역 선택
+            <select>
+                <option value="경기도">경기도</option>
+                <option value="서울시">서울시</option>
+                <option value="전라도">전라도</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="제출하기"> <input type="reset" value="초기화">
+
+        </form>
+    </fieldset>
+    <br>
+    <hr>
+    <br>
+
+    <fieldset>
+        <legend>프로젝트 정보</legend>
+
+        <form action="#" method="get">
+            <label>
+                이름 : <input type="text" name="cname">
+            </label>
+            <br>
+            <label>
+                시작 날짜 : <input type="date" name="cdate">
+            </label>
+            <br>
+            <label>
+                이메일 : <input type="email" name="cemail">
+            </label>
+            <br>
+            <label>
+                URL : <input type="text" name="cURL">
+            </label>
+            <br>
+            <label>
+                중요도 <input type="range" name="cCritical">
+            </label>
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+    </fieldset>
+    <br>
+    <hr>
+    <br>
+
+    <h1> 우리들의 홈페이지</h1>
+    <br>
+    <h3>우리들만의 즐거운 공간</h3>
+    <ul>
+        <li><a href="#">1학년</a></li>
+        <li><a href="#">2학년</a></li>
+        <li><a href="#">3학년</a></li>
+    </ul>
+    <br>
+    <b>이달의 인물</b>
+    <br>
+    교내 영상제에서 <b>최우수상</b>을 받은 XXX을 만나봅니다
+    &copy; 서울 고등학교
+
+
+    <select>
+        <option value="1번">1번</option>
+        <option value="1번">2번</option>
+        <option value="1번">3번</option>
+        <option value="1번">4번</option>
+        <option value="1번">5번</option>
+
+    </select>
+
+
+
+
+</body></html>
