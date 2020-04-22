@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type="text/css">
+        /* 메인 메뉴 */
+        .nav {
+            /* 리스트 스타일 써클 다 지워버리기 */
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* 
+        .nav > li
+        .nav li     셀렉터 차이에 결과 값이 바뀌니 유의.
+        */
+
+        .nav>li {
+            float: left;
+
+            /* 높이 조절하기 */
+            /* padding: 20px 0; */
+
+            line-height: 40px;
+            background-color: #84B1ED;
+            margin: 0.09px;
+            border: 1px solid white;
+            min-width: 150px;
+
+            /* Absolute 자식요소의 기준점으로 활용하기 위해 */
+            position: relative;
+
+        }
+
+        /* 메인 메뉴 */
+        .nav>li>a {
+            color: white;
+            text-decoration-line: none;
+            font-weight: bold;
+            font-family: HELVETICA, NANUMGOTHIC;
+            font-size: 18px;
+            margin: 0px 3px;
+            padding: 10px 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .nav>li>a:hover {
+            -webkit-transition: all 2s linear;
+            -moz-transition: all 2s linear;
+            -o-transition: all 2s linear;
+            transition: all 2s linear;
+
+            text-decoration-line: underline;
+            color: ghostwhite;
+        }
+
+        /* 하위 메뉴 */
+        .nav>li>ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0;
+            /* HTML 계층구조에서 빼는 설정 */
+            /* 부모요소인 <li>태그의 컨텐츠 영역을 차지하지 않도록 만들기 */
+            position: absolute;
+
+            width: 100%;
+            /* 서브메뉴 위치 조절 */
+            left: 1px;
+
+            color: white;
+        }
+
+        /* 서브 메뉴 항목 */
+        .nav>li>ul>li {
+            background: dodgerblue;
+
+
+
+            /* 서브메뉴는 평상시 보이지 않아야한다. */
+            /* 방법 1 */
+            /* display: none; */
+
+            /* 방법 2 */
+
+            line-height: 0;
+            height: 0;
+            font-size: 0;
+
+
+        }
+
+        .nav>li:hover>ul>li {
+            /* 방법 1에 대한 처리 */
+            display: list-item;
+
+            /* 방법 2에 대한 처리 */
+            /*
+            line-height: inherit; 
+            height: inherit;
+            font-size: inherit;
+*/
+            padding-left: 14px;
+
+            line-height: 40px;
+            height: 40px;
+            font-size: 18px;
+
+            /*
+            -webkit-transition: all 2s linear;
+            -moz-transition: all 2s linear;
+            -o-transition: all 2s linear;
+*/
+            transition: height 0.3s linear;
+        }
+
+        /* 서브메뉴 링크 텍스트 스타일 */
+        .nav>li>ul>li>a {
+            text-decoration: none;
+            color: #D1B6E1;
+            display: block;
+        }
+
+
+        .nav>li>ul>li>a:hover {
+            color: white;
+
+            -webkit-transition: all 0.4s linear;
+            -moz-transition: all 0.4s linear;
+            -o-transition: all 0.4s linear;
+            transition: all 0.4s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>2단 메뉴</h2>
+    <hr>
+    <ul class="nav">
+        <li><a href="#">HOME</a></li>
+        <li>
+            <a href="#">MENU</a>
+            <ul>
+                <li><a href="#">세부메뉴1</a></li>
+                <li><a href="#">세부메뉴2</a></li>
+                <li><a href="#">세부메뉴3</a></li>
+                <li><a href="#">세부메뉴4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">게시판</a>
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자유게시판</a></li>
+            </ul>
+        </li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+
+</body></html>
