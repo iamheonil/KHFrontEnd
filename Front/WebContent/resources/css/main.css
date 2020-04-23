@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+        #navi {
+            width: 960px;
+            text-align: center;
+            margin: auto;
+        }
+
+        #navi a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #navi li>ul a:hover {
+            color: yellow;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+        }
+
+        #navi li>ul li:hover {
+            background-color: green;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+
+        }
+
+        #navi li {
+            width: 100px;
+            min-height: 10px;
+            list-style: none;
+            float: left;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+            border: 1px solid black;
+            background: red;
+
+        }
+
+        #navi li ul {
+            display: none;
+            position: absolute;
+            clear: both;
+        }
+
+        #navi li:hover ul {
+            display: block;
+            margin-left: -60px;
+            margin-top: 20px;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+        }
+
+        #navi ul:hover {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

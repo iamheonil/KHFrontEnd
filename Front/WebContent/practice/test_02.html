@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4월 23일 2시험 가즈앙</title>
+
+    <style type="text/css">
+        fieldset {
+            width: 300px;
+            border: 0px;
+        }
+
+        fieldset>legend {
+            content: "Step : ";
+            font-size: 15px;
+        }
+
+        table tr {
+            font-size: 17px;
+
+        }
+
+        .list {
+            border: 1px solid white;
+            border-radius: 10px;
+            background: #3311;
+        }
+
+        input {
+            width: 170px;
+        }
+
+        .wrap {
+            width: 330px;
+            background-color: lightgreen;
+            padding: 10px 10px;
+            margin: auto;
+            border-radius: 9px;
+        }
+
+        button {
+            background-color: darkgreen;
+            font-size: 15px;
+            color: white;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <form action="#" method="get">
+            <fieldset>
+                <legend>로그인 정보</legend>
+                <table>
+                    <div class="list">
+                        <tr>
+                            <td>아이디</td>
+                            <td> <input type="text" name="id"></td>
+                        </tr>
+                    </div>
+
+                    <div class="list">
+                        <tr>
+                            <td>비밀번호</td>
+                            <td> <input type="password" name="password"></td>
+                        </tr>
+                    </div>
+
+                    <div class="list">
+                        <tr>
+                            <td>비밀번호 확인</td>
+                            <td> <input type="password" name="passwordchk"></td>
+                        </tr>
+                    </div>
+
+                    <div class="list">
+                        <tr>
+                            <td>회원등급</td>
+                            <td> <input type="text" name="id" disabled placeholder="준회원" style="font-style: italic"></td>
+                        </tr>
+                    </div>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>개인정보</legend>
+                <table>
+
+                    <div class="list">
+                        <tr>
+                            <td>이름</td>
+                            <td> <input type="text" name="name" placeholder="5자미만 공백없이"></td>
+                        </tr>
+                    </div>
+
+                    <div class="list">
+                        <tr>
+                            <td>메일 주소 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td> <input type="email" name="email" placeholder="abcd@domain.com"></td>
+                        </tr>
+                    </div>
+
+                    <div class="list">
+                        <tr>
+                            <td>연락처</td>
+                            <td> <input type="tel" name="tele"></td>
+                        </tr>
+                    </div>
+
+                </table>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>
+                    코딩숙련도 (상, 중, 하)
+                </legend>
+                <div class="list">
+                    <input type="range" name="codinglevel">
+                </div>
+            </fieldset>
+            <br>
+            <button>제 출</button>
+        </form>
+    </div>
+</body>
+
+</html>
