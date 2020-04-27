@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//변수 선언
+var n1;
+
+//변수값 대입
+n1 = '123';
+
+console.log( n1 );
+
+//변수의 선언과 동시에 초기화
+var n2 = '34.789';
+console.log(n2);
+
+console.log("---------------")
+
+console.log( n1 = Number(n1) );
+console.log( n2 = Number(n2) );
+
+console.log( n1 );
+console.log( n2 );
+
+console.log("---------------")
+
+console.log( typeof(n1) + " : " + n1 )
+console.log( typeof(n2) + " : " + n2 )
+
+console.log("--- n1 ------------")
+console.log( typeof(n1) )
+console.log( n1 )
+
+console.log("--- n2 ------------")
+console.log( typeof(n2) )
+console.log( n2 )
+
+console.log("---------------")
+
+console.log( n1.toString() ) // 10진수 형태로 변환
+
+// 진법을 지정하여 문자로 변환할 수 있다
+console.log( n1.toString(2) ) // 2진수 형태로 변환
+console.log( n1.toString(8) ) // 8진수 형태로 변환
+console.log( n1.toString(16) ) // 16진수 형태로 변환
+
+console.log("---------------")
+
+console.log( n1.toFixed(2) ) // 소수점 2자리까지 표현된 숫자를 문자로!
+console.log( n2.toFixed(3) ) // 소수점 3자리까지 표현된 숫자를 문자로!
+
+console.log("---------------")
+
+console.log( Number(n1.toFixed(2)) )
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+
+
+        var data; // 변수 생성 (Undefined)
+        
+//        data = "123"
+        
+        console.log("------------------");
+        
+        if(data == undefined) {
+            console.log("data 변수를 초기화 해주세요!")
+        };
+        
+        if (data == null) {
+            console.log("data 변수와 Null 이 같은 값입니다.")
+            console.log("참조 대상이 없습니다")
+        };
+        
+        console.log("------------------");
+        
+        if (!data) {
+            console.log("Data의 값이 False")
+        }
+        
+        if (!undefined) {
+            console.log("Data의 값이 False")
+        }
+        
+        console.log("------------------");
+        
+        console.log("data == false의 결과 : ")
+        console.log(data == false)
+        
+        console.log("------------------");
+        
+        if(data === undefined) {
+            console.log("=== Undefined 연산, Data 변수가 초기화 되지 않았음")
+        }
+        
+        if(data === null) {
+            console.log("=== null 연산, Data 변수가 참조하고 있는 대상이 없음")
+        }
+        
+//        ==, 기호 두개짜리 동등 비교 연산 - Abstract Equality
+//        명세서에 정의되어 있는 순서에 따라 비교 연산을 수행한다.
+//        데이터 타입이 달라도 비교결과가 나온다 (결과는 명세서 확인 해야함.)
+        
+        
+//        ===. 기호 세개짜리 동등 비교 연산 - Strict Equality
+//        데이터타입이 같은지 먼저 검사하고 데이터타입이 같아야만 비교함
+//        데이터 타입이 다르면 무조건 False
+        
+        console.log("------------------");
+        console.log(!undefined)
+        console.log(!null)
+        
+//        ! 연산자를 사용하면 true가 반환되는 데이터
+//        false, null, undefined, NaN, 0, "" 등
+//        console.log(data);
+//        console.log(typeof(data));
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>ㅎㅇ</h2>
+
+</body></html>

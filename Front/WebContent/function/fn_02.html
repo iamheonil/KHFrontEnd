@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        // JS함수, Function    
+
+        //        function 함수이름(매개변수1, 매개변수2, ...) {
+        //            실행코드
+        //            
+        //            return 반환값
+        //        }
+        //        ** 매개변수의 데이터타입과 반환데이터타입을 별도로 명시하지 않는다.
+
+        //        함수 호출 코드
+        //        var res = 함수이름(전달인자1, 전달인자2);
+
+        // 함수 정의
+        function hello() {
+            console.log("Hello")
+        }
+
+        var f = hello; // 함수의 이름을 변수에 저장(변수로 함수호출 가능)
+        var res = hello(); // 함수 호출 결과 저장
+
+        console.log("---f---")
+        console.log(f);
+
+        console.log("---res---")
+        console.log(res);
+
+        console.log("------------")
+
+        var func = function(data1, data2) {
+            //            data1 = "Hi"
+            //            data2 = "Hello"
+
+            console.log(data1 + " : " + data2)
+
+            return data1 + data2
+        }
+
+        var result = func(10, 20)
+        //        func();
+
+        console.log("----- 덧셈 결과 -----")
+        console.log(result);
+
+        console.log("----- 문자열 덧셈 결과 -----")
+        var result = func("십", 20)
+        console.log(result);
+
+        console.log("--------------")
+        var res1 = func(); // 아무것도 전달하지 않는다면  
+        console.log(res1) // NaN을 반환한다.
+
+        console.log("--------------")
+        var res2 = func(10); // 아무것도 전달하지 않는다면  
+        console.log(res2) // NaN을 반환한다.
+        // 매개변수에 전달인자를 전달하지 않으면 Undefined로 처리된다.
+        
+        console.log("--------------")
+        // 전달인자를 일부러 넘치게 전달하면?
+        var res3 = func(1, 2, 3, 4);
+        console.log(res3)
+        // 맨 앞 두개만 받는다. 뒤에 전달인자들은 전달되긴 하지만 무시한다.
+        
+        
+        
+        
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body></html>

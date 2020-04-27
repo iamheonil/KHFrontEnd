@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//NaN, Not a Number
+//	숫자로 사용하려는데 숫자가 아닐 때 반환하는 값
+
+console.log( NaN )
+console.log( typeof(NaN) )
+console.log("---------------")
+
+console.log( isNaN(123) ) // false
+console.log( isNaN("ABC") ) // true
+console.log( isNaN("123") ) // false
+console.log( isNaN("123ABC") ) // true
+
+console.log("---------------")
+
+//Infinity
+//	무한대를 나타내는 키워드
+
+console.log( 123/0 )
+console.log( -123/0 )
+
+console.log( isFinite(123/0) ) // false
+console.log( isFinite(-123/0) ) // false
+
+console.log( isFinite(123) ) // true
+
+console.log("---------------")
+
+var x = 123;
+if( isFinite(x) ) { // x가 유한한 값일 때만 수행
+	
+}
+
+var y = 555;
+if( !isNaN(y) ) { // y가 숫자일 때만 수행
+	
+}
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

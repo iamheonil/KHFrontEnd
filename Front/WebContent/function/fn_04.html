@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        // Scope(스코프)
+        // 변수의 유효범위
+        // 인스턴스, 스태틱 변수 등등을 생각하면 쉬울 듯
+        // Global(전역), Local(지역), Block(블록지역)
+
+        // 호이스팅 (Hoisting)
+        console.log(num);
+
+        // 글로벌(Global)스코프, 전역 스코프
+        var num = 10; // 전역 변수 Global Variable
+
+        // ----------------------------------------
+
+
+        function func() {
+            console.log(num);
+
+            // 호이스팅 (Hoisting)
+            console.log(func_var);
+
+            var func_var = 20; // 지역 변수 Local Variable
+            console.log(func_var);
+        }
+
+        func();
+
+        //        console.log(func_var);  // func_var 는 지역변수이기 때문에 함수 밖에서 사용하게 된다면 오류가 발생한다.
+
+
+        // { } 블록
+        {
+            // 블록지역 스코프
+            var one_block_var = 111;
+
+            console.log(one_block_var);
+        }
+
+        console.log(one_block_var);
+        // 출력된다. { } 스코프 무시됨.
+
+
+        // ----------------------------------------------
+        console.log("-----------------");
+
+        var data1 = "Alice";
+        console.log(data1);
+
+        var data1 = "Bob";
+        console.log(data1);
+        // Var로 변수를 선언하면 이전에 선언되었던 이름이어도 사용할 수 있다.
+        // 에러안남, 이전에 생성된 변수를 가져와서 사용한다
+
+        // ----------------------------------------------
+        // 호이스팅(Hoisting) 시도,
+        // let 선언 변수는 초기화전에 접근이 불가능하다.
+        //        console.log(data2);
+
+        let data2 = "Clare"
+        console.log(data2);
+
+        //        let data2 = "Dave";
+        // 에러가 나는데, let은 변수이름 중복 선언이 불가능하다.
+
+        data2 = "Dave"
+        console.log(data2);
+
+        // ----------------------------------------------
+
+        // {} 블록지역 스코프
+
+        {
+            let block_let = 40;
+            console.log(block_let)
+        }
+        //        console.log(block_let);
+        // 블록지역 스코프 밖에서 let 선언된 함수를 사용하게 되면 오류가 발생한다.
+
+        for (var i = 0; i < 5; i++) {
+
+        }
+
+        console.log(i);
+
+        //        for (let j = 0; j < 5 j++) {
+        //            
+        //        }
+        // console.log(j);
+        // let 변수는 block 스코프 제한
+
+
+        // ----------------------------------
+
+        // const : 상수 생성 키워드
+        // const data3; // Error, 선언과 동시에 초기화 필수
+
+        const data3 = 50;
+        console.log(data3);
+
+        data3 = 60;
+        // data3 는 Const(상수)인데 대입을 하니 대입할 수 없다는 오류가 발생한다.
+    </script>
+</head>
+
+<body>
+
+</body></html>

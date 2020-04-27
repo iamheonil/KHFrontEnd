@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        // Function, 함수
+
+        // 선언
+        function func() {
+            // 동작코드
+            console.log("ㅎㅇ 함수임")
+        }
+
+        // Java와 비슷한 방식으로 호출
+        func();
+
+        //        console.log(func);
+
+
+        var func2;
+
+        func2 = function() {
+            console.log("ㅎㅇ 익명 함수임")
+        }
+
+        func2();
+
+        var func3;
+        var func4;
+
+        var func3 = func2;
+        var func4 = func;
+
+        console.log("------------------")
+        func3();
+        func4();
+
+        console.log("----------")
+        console.log(typeof(func))
+        console.log(typeof(func2))
+        console.log(typeof(func3))
+        console.log(typeof(func4))
+
+        console.log(func)
+        console.log(func2)
+
+        console.log("----------")
+
+        console.log(func())
+        console.log(func2())
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
