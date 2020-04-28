@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        var cnt = 0;
+
+        function cntUp() {
+
+            console.log(cnt)
+            return cnt++
+        }
+
+        //        setInterval(cntUp, 1000);
+
+        function cntUp2() {
+            var cnt2 = 0;
+
+            return ++cnt2;
+        }
+
+        // console.log(cntUp2());
+
+        // 외부 함수
+        function cntUp3() {
+            var cnt3 = 0; // 지역변수 -> 자유변수로 넘어간다
+
+            // 익명 함수
+            // 내부 함수
+            return function() {
+                return ++cnt3;
+            }
+        }
+
+        var f = cntUp3();
+        
+
+        //        console.log(f()); // 참조대상이 없어져서 에러가 발생한다.
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

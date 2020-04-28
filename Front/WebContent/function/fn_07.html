@@ -4,17 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+
     <script type="text/javascript">
-    
-    
-        
-        
+        function hello() {
+            console.log("Hello")
+        }
+
+        hello();
+
+        function popup() {
+            alert("ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ")
+        }
+
+        //        setTimeout(function() {
+        //            alert("HIHI")
+        //        }, 3000);
+
+        //         setInterval(popup, 1);
+
+        // 1000밀리초마다 hello 함수 호출
+        var tid = setInterval(hello, 1000);
+
+        // clearInterval(tid)
+
+        function stop() {
+            clearInterval(tid)
+        }
+
+        // clearInterval 타이머 맞춰보기
+        setInterval(stop, 10001);
     </script>
 </head>
 
 <body>
 
-</body>
+    <h1> ㅎㅇ</h1>
 
-</html>
+</body></html>

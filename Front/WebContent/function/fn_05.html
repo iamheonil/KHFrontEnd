@@ -4,10 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+
     <script type="text/javascript">
-    
-    
+        // 전역변수 선언
+        var num = 111;
+
+        function fn1() {
+            num += 11;
+        }
+
+        function fn2() {
+            console.log(num)
+        }
+
+        fn1();
+        fn2();
+
+        function hello() {
+            var num = 222;
+
+            console.log("hi " + num)
+
+            inner(); // 내부함수 호출, 스코프만 맞다면 사용 가능하다.
+
+            function inner() {
+                var num = 333;
+
+                console.log("inner " + num)
+            }
+
+            //            inner(); // 내부함수 호출, 스코프만 맞다면 사용 가능하다.
+        }
+
+        hello();
+
+        //        inner() // error, inner 함수가 정의된 스코프를 벗어났음
         
         
     </script>
@@ -15,6 +46,4 @@
 
 <body>
 
-</body>
-
-</html>
+</body></html>

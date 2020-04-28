@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        // Quiz 현재 시 분 초를 1초마다 출력
+        // Console 출력
+
+        function nowTime() {
+
+            var now = new Date;
+            console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+
+        }
+
+        // setInterval(nowTime, 1000);
+
+
+        // toDateString() - 날짜만 출력하는 메소드
+
+        function toDate() {
+            var now = new Date;
+            // console.log(now.toDateString());
+
+            // console.log(now.toTimeString());
+
+            time.innerHTML = "<h1>" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        }
+
+        setInterval(toDate, 1000)
+    </script>
+</head>
+
+<body>
+
+    <div id="time">
+
+
+    </div>
+
+</body></html>

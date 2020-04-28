@@ -4,17 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+
     <script type="text/javascript">
-    
-    
+        var result;
+        // 전역 변수
+
+        function add(n1, n2) {
+            result = n1 + n2;
+        }
+
+        function print() {
+            console.log(result)
+        }
+
+        add(100, 200);
+//        print();
+
+        // ----------------------------------------------------    
+
+        // 콜백 함수
+        // Callback Function
+        // 직접 호출해서 동작하는 함수가 아닌 외부의 동작에 의해서 실행되는 함수
+
+        // 다른 시스템, 함수 등이 호출해주는 함수
+
+        function sum(n1, n2, callback) { // 콜백
+            var res = n1 + n2;
+
+            callback(res); // 콜백 호출
+        }
         
+        // 결과값을 Console로 출력
+        function display(data) {
+            console.log("결과 값 : " + data);
+        }
+        
+        sum(11, 22, display);
+        
+        function alertResult(data) {
+            alert("결과값은 " + data)
+        }
+        
+        sum(111, 222, alertResult)
+        
+        
+        console.log("-----------")
+        
+        // 익명함수로 Callback 전달하기
+        sum(555, 666, function(data) {
+            document.write("<h1>" + data + "</h1>")
+            
+        })
+        
+        var write = function(data) {
+            document.write("<h1>" + data + "</h1>")
+        }
+        
+        sum(111, 222, write);
         
     </script>
+    
 </head>
 
 <body>
 
-</body>
-
-</html>
+</body></html>

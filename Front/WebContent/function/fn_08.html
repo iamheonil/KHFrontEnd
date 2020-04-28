@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        // 날짜 객체 살펴보기
+
+        let now = new Date();
+
+        function time() {
+            document.write(now)
+        }
+
+        // setInterval(time, 1000);
+
+        let d1 = new Date();
+        // document.write(d1)
+
+        document.write("\n");
+
+        // 하루 -> 1970년 1월 2일 00시
+        // 1d -> 24h == 24 * 60 == 24 * 60 * 60s == 24*60*60*1000ms
+        // = 86400000ms
+
+        var d2 = new Date(86400000);
+        // document.write(d2)
+
+        var now2 = new Date(1600000000000);
+        // document.write(now2)
+
+        var d3 = new Date("2015/07/09 15:26:00");
+        // document.write(d3);
+
+        // 월은 0월부터 시작한다, 4로 입력하면 5월이 된다.
+        var d4 = new Date(2011, 4, 4, 4, 44, 44);
+        // document.write(d4);
+
+        // Date.now - 현재 시간을 밀리초로 나타낸다.
+        console.log(Date.now());
+
+        // 현재 시간 표현하는 다른 방법
+        var d5 = new Date(Date.now())
+        console.log(d5);
+
+        // Date 객체를 이용한 함수들
+        // 주로 날짜나 시간을 파싱(추출)하는 함수들이다.
+        var d = new Date();
+
+        console.log("-------------")
+        console.log(d.getFullYear()); // 년도
+        console.log(d.getMonth()); // 월 (0부터 시작)
+        console.log(d.getDate()); // 일
+        console.log(d.getDay()); // 요일 (0 == 일요일, 6 == 토요일)
+
+        console.log("-------------")
+        console.log(d.getHours())
+        console.log(d.getMinutes())
+        console.log(d.getSeconds())
+        console.log(d.getMilliseconds())
+
+        document.write(d.getHours());
+2
+        // get 대신 set을 사용하는 함수를 사용하면 Date 객체의 날짜/시간을 변경할 수 있다.
+        // d.setFullYear(2050); // 년도
+        // d.setMonth(0); // 월
+        // d.setDate(27); // 일
+
+        // console.log(d);
+        
+        var customDate = new Date();
+        
+        // 임의의 시간으로 설정, 유닉스 타임스탬프 이용
+        customDate.setTime(38112398229834)
+        console.log(customDate);
+        
+    </script>
+</head>
+
+<body>
+
+</body></html>
