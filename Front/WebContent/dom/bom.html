@@ -11,16 +11,98 @@
 
         console.log(window.data);
 
-        window.setTimeout(function() {
-            alert("윈도우 객체로 만든 setTimeOut")
-        }, 100)
+        // window.setTimeout(function() {
+        //  alert("윈도우 객체로 만든 setTimeOut")
+        // }, 100)
 
         // window. 는 생략가능하다.
-        // window.open();
-        open("https://www.naver.com")
+        // window.open(url, name, option); : Windowid
+        // Url - 팝업 주소
+        // Name - 팝업창의 이름 설정
+        // Option - 팝업창 동작 설정
+        // open("https://www.naver.com") // 2번째 인자로 _blank(새 창)
+        // "_blank" 새 창, "_self" 현재 창 등
+
+
+        //        var wid = open("https://www.naver.com");
+
+        // setTimeout(function() {
+        // wid.close()
+        // }, 100)        
+        //        TimeOut();
+
+        console.log("----------------");
+
+        console.log("Navigator");
+
+        console.log(navigator.userAgent);
+
+        console.log(navigator.language);
+
+        console.log(navigator.vendor);
+
+        console.log("----------------");
+
+        console.log("Location");
+
+        console.log(location.host);
+
+        console.log(location.hostname);
+
+        console.log(location.protocol);
+
+        console.log(location.pathname);
+
+        console.log(location.href);
+
+        // location.href = "/function/fn_10.html"
+        // location.href 태그는 <a href> 태그와 같은 반응을 보인다.
+        // -> 페이지 이동
+
+        console.log("----------- 쉿! 히스토리")
+
+        // history.back() // 이전으로 가기(뒤로가기, 이전 방문 페이지로 이동)       
+        // history.forward() // 다음으로 가기(앞으로 가기, 다음 방문페이지로 이동)
+
+        // history.go(n) // n값은 정수, 히스토리 페이지 이동 갯수를 표현한다.
+        // 0이면 현재 페이지
+        // 양수면 다음으로 가기, 음수면 이전으로 가기
+        // ex) history.go(-1) - 이전으로 가기
+
+
+        console.log("---------- Screen");
+        // 모니터 정보 객체
+
+        // 브라우저 최대화했을 때 차지하는 영역의 크기(px)
+        // 브라우저가 위치한 모니터 기준
+        console.log(screen.availWidth);
+        console.log(screen.availHeight);
+
+        console.log("-------");
+        // 모니터의 최대 크기 (최대화 한 크기가 아닌 정식 규격) 
+        console.log(screen.width);
+        console.log(screen.height);
+
+        console.log("-------");
+        // 브라우저의 외곽 테두리 크기
+        console.log(window.outerWidth);
+        console.log(window.outerHeight);
+
+        console.log("--------");
+        // 브라우저의 내부(body 태그)가 보여지는 곳의 크기
+        // 메뉴, 상단바, 북마크바, 스크롤 영역등이 제외 된 구역이 계산된다.
+        // Safari, Chrome은 정상 작동 하는데, Whale에서는 정상작동 하지 않는다.
+        // 2020.04.29 기준
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
         
+        console.log("----------");
+        // 
+        console.log(window.screenX);
+        console.log(window.screenY);
         
-        
+        console.log(window.screenLeft);
+        console.log(window.screenTop);
         
         
         

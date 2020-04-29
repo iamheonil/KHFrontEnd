@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            // h1 요소 노드 생성
+            var h = document.createElement("h1");
+
+            // 객체 생성 확인
+            console.log(h);
+
+            // 텍스트 노드 생성
+            var text = document.createTextNode("HELLO DOM");
+
+            console.log(text)
+
+            console.log("-----------------")
+
+            // h1 요소 노드에 텍스트 노드를 자식으로 추가하기
+            h.appendChild(text);
+            // console.log 는 실시간 상황을 보여준다.
+
+            document.body.appendChild(h);
+            // ** document.body
+            // body 요소노드
+            // document 객체에서 body는 특별히 키워드로 저장하고 있음.
+
+            var abc = document.createElement("Heonil");
+            var t = document.createTextNode("안녕하십니까!");
+
+            abc.appendChild(t);
+
+            document.body.appendChild(abc);
+            // 확인 해보면 태그가 <heonil> 로 되어 있다.
+
+            abc.style.color = "red";
+            abc.style.fontStyle = "ITALIC";
+            abc.style.border = "1px groove dodgerblue";
+            abc.style.padding = "15px";
+            // 표준태그가 아닌 비표준 태그일뿐, 태그가 어떻든 스타일은 적용 된다.
+
+
+            // ex)
+            var pTag = document.createElement("p") // : p태그 요소 생성
+            
+            // ** document.body 와 body 태그는 똑같다.
+            var t1 = document.createTextNode("Hello 1");
+            pTag.appendChild(t1);
+            document.body.appendChild(pTag) // : body 태그에 pTag 요소 추가
+            
+            
+            // ex2)
+            var div = document.createElement("div") // : div 요소 생성
+            var t = document.createTextNode("Hello!!!!!") // : 텍스트 생성
+            div.appendChild(t) // : div 에 t 텍스트요소 추가하기
+            document.body.appendChild(div) // : body 에 div 요소 추가하기
+            // ** document.body에 추가해야 body 에 추가되어 화면에 출력된다.
+
+        };
+    </script>
+</head>
+
+<body>
+
+
+
+</body></html>
