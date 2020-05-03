@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>20200501 javascript dom_09</title>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            //태그의 id는 window객체의 property(속성)로 등록된다
+            // document.getElementById("id")를 대신해서 사용할 수 있다
+
+
+            console.log(window.test) // #test
+            console.log(window.myForm) // form#myForm
+
+            window.test.style.color = "chocolate";
+
+            //window객체의 property를 사용할 때 window. 생략가능
+
+            test.style.background = "black";
+            //---------------------------------------------------
+
+            // <form>태그의 자식요소들의 name 값들은 해당 
+            // <form> 객체의 property로 등록된다
+
+            // id가 myForm인 <form> 태그의 자식요소 중 name이 data1인 요소
+            console.log(myForm.data1) // "form#myForm [name='data1']"
+
+            myForm.data1.value = "TEST";
+            //---------------------------------------------------
+
+            //<form>태그의 name은 document객체의 property로 등록된다
+            // input태그의 name이 아님, form태그 자신의 name이 등록됨
+
+            console.log(document.myFormName)
+
+            console.log("----------------------------")
+
+            var f = myForm; // form#myForm > input[name="data1"]
+
+            console.log(f.data1); // form#myForm > input[name="data1"]
+
+            console.log(f.c); //form#myForm > input[name="c"]
+            //[name="c"] 인 요소는 2개여서 배열로 반환한다
+
+            console.log(f.c[0].checked)
+            console.log(f.c[1].checked)
+
+            //checkbox 의 checked 속성 - 체크된 상태를 확인한다
+            //true - 체크된 상태
+            // false - 체크 해제된 상태
+            console.log(f.c[0].checked)
+            console.log(f.c[1].checked)
+
+            if (f.c[0].checked && f.c[1].checked) {
+                //둘 다 체크가 된 상태
+                f.submit();
+            } else {
+                //둘 중 하나라도 체크가 안된 상태
+                alert("이용약관 & 개인정보 수집 동의에 체크하세요!")
+            }
+
+            console.log("------")
+
+            //비활성화 상태 확인(disabled)
+            console.log(f.b.disabled)
+
+            //속성의 값 상관없이 속성의 존재 유무로만 판단하는 속성들
+            // disabled, checked, selected, readonly
+
+            //<select> 의 value값은 자식요소인 <option > 태그의 value를 
+            //    활용한다
+            console.log(f.s.value)
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1 id="test">테스트 폼</h1>
+    <hr>
+    <form id="myForm" name="myFormName" action="#" method="get">
+
+        <input type="text" name="data1" /><br>
+        <input type="text" name="data2" value="기본값" /><br><br>
+
+        <input type="checkbox" name="c" value="c1" checked="checked" />이용약관<br>
+        <input type="checkbox" name="c" value="c2" checked="checked" />개인정보 수집 동의<br>
+        <br>
+
+        <input type="button" name="b" disabled="disabled" value="확인" />
+        <br><br>
+
+        <select name="s">
+            <option value="one">1</option>
+            <option value="two">2</option>
+        </select>
+
+        <input type="text" name="gd" value="앙기모띠">
+
+    </form>
+
+
+</body>
+
+</html>

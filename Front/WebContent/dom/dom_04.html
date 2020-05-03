@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+        h1[data-idx="1"] {
+            border: 1px solid #ccc;
+        }
+
+        h1[data-type="text"] {ㄹ
+            color: red;
+        }
+
+        h1[data-type="number"] {
+            color: blue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+
+    <h1 class="content idx1 text"> 첫번째</h1>
+    <h1 class="content idx2 number">222</h1>
+    <h1 class="content idx3 text"> 세번째</h1>
+    <h1 class="content iex4 number"> 444</h1>
+
+
+    <!-- class 속성 -->
+
+    <!-- html 문서의 내그들에게 공통 css 를 적용하기 위해 사용됨 -->
+    <!-- class 는 브라우저가 css 스타일을 적용하기 위해서 -->
+    <!-- 전체탐색( Full- Scan)을 한다 -->
+    <!-- 모든 태그의 모든 class설정값을 전부 다 읽어서 스타일을 적용한다 -->
+
+
+    <!-- 사용자 정의 속성 -->
+
+    <!--   html 에서 추가된 속성 -->
+    <!--   개발자가 원하는 속성을 만들어서 사용할 수 있도로 제공됨 -->
+    <!-- "data"- 로 시직하는 속성을 사용자가 직접 정의하여 사용한다     -->
+
+    <!-- ** 사용자 정의 속성도 표준 속성으로 취급된다 -->
+
+
+    <hr>
+    <h1 class="content" data-idx="1" data-type="text"> 첫번재</h1>
+    <h1 class="content" data-idx="2" data-type="tnumber">2222</h1>
+    <h1 class="content" data-idx="3" data-type="text"> 세번째</h1>
+    <h1 class="content" data-idx="4" data-type="number">4444</h1>
+
+</body>
+
+</html>

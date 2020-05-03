@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200501 javascript dom_07</title>
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	//h3 태그요소들을 dom객체로 반환하기 ( 배열 )
+	var h3=document.getElementsByTagName("h3");
+	console.log(h3);
+	
+	h3[0].innerHTML = "HI";
+	h3[1].innerHTML = "HELLO";
+	
+	h3[2].style.color="blue";
+	
+	//h1 태그 요소 가져오기
+	var h1 = document.getElementsByTagName("h1")
+	console.log(h1)
+	
+// 	h1.innerHTML = "AHAHAHAH"; //동작하지 않음
+	//배열이므로 배열이름 (변수 )에 직접 DOM API 함수나 
+	//property 를 사용해서는 안된다
+
+	h1[0].innerHTML = "AJAJAJA";
+	
+	//-------------------------------------
+	
+	document.getElementsByTagName("h1")[0].style.color="red";
+	document.getElementsByTagName("h1")[0].style.border="1px solid blue";
+	document.getElementsByTagName("h1")[0].style.background="skyblue";
+	
+	var h = document.getElementsByTagName("h1");
+	h[0].style.color="red";
+	h[0].style.border="1px solid tomato";
+	h[0].style.background="skyblue";
+	
+	//매번 dom api 를 호출하도록 코드를 작성하는 것은 비효울적
+	// dom api 호출 결과를 변수에 저장하고 사용할 것
+	
+	
+	//--------------------------------------------
+	
+	//객체 제거
+	h3[2].remove();
+	console.log(h3[2])
+	
+	//<body> 의 자식 중 h3[1] 요소를 제거
+	document.body.removeChild(h3[1])
+	
+	//객체 제거
+	h3[0].remove();
+	
+	//remove() 로 제거한 객체 얻어오기
+	var test = document.getElementById("test")
+	console.log(test)
+	
+	
+}
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<h1>제목</h1>
+<hr>
+
+<h3 id="test">javascript</h3>
+<h3>dom</h3>
+<h3>getElementsByTagName</h3>
+
+
+</body>
+</html>

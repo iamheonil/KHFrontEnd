@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200501 javascript dom_05</title>
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	//<body> 태그의 DOM 객체
+	console.log(document.body);
+	
+	//<body> 태그의 내용물 (컨텐츠 ) 출력
+	console.log(document.body.innerHTML)
+	
+	//내용물 전체 치환한다
+// 	document.body.innerHTML="<div><h1>INNER HTML</h1></div>"
+
+	document.body.innerHTML += "<div><h1>INNER HTML</h1></div>"
+	
+	
+	//-----------------------------------------------------------------
+	
+	// = 바꾸기  += 추가하기!
+	
+	var content = document.getElementById("content");
+	
+	content.innerHTML = "<h3>innerHTML</h3>"; //내용물 전체 치환
+	content.innerHTML += "<p> 테스트 </p>"; //내용물 추가 
+	content.innerHTML += "<hr>"; //내용물 추가
+	
+	
+	//------------------------------------------------
+	
+	//준비해놓은 스트링~ !  
+	
+	var h ="";
+	h += "<h3>테스트</h3>";
+	h += "<h3>하나</h3>";
+	h += "<h3>둘</h3>";
+	h += "<h3>셋</h3>";
+	
+	console.log(h);
+	
+	
+	//준비해놓은 string 을 한번에 집어넣기
+	
+	content.innerHTML = h;
+	
+// 	/----------------------------------------------
+	// 불러올때~ 태그를 적용하냐 ~ 무시하냐 ~ 
+	
+	console.log("---innerHTML ---")
+	console.log(content.innerHTML)
+	
+	console.log("--- innerText ---")
+	console.log(content.innerText)
+	
+	//------------------------------------------------
+	
+	
+	content.innerText="<h1>하이</h1>"
+	
+	
+	
+	
+	
+};
+
+</script>
+</head>
+<body>
+
+
+<div id="content"> CONTENT</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20200501 javascript dom_08</title>
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	var form= document.getElementById("myForm");//아이디 이용 선택
+	var data1 = document.getElementsByName("data1"); //name 속성 이용선택
+	
+	console.log(form)
+	console.log(data1)
+	
+	//form 태그의 자식요소인 input[name='data1'] 을 제거한다
+	form.removeChild(data1[0])
+	
+	//--------------------------------------------
+	
+	//기본값 설정
+	//이 아래 줄 주석 으로 if- else 나뉨
+	document.getElementsByName("data2")[0].value="TEST";
+	
+	//input[name='data2'] 요소에 적혀있는 값이 ""이 아닐때
+	if(document.getElementsByName("data2")[0].value !=""){
+		//자바스크립트 코드를 이용한 form 제출(submit)
+		form.submit();
+	} else{ //아무것도 작성하지 않았을 때
+		
+		alert("data2 를 채우세요! ")
+		
+	}
+	
+	//--------------------------------------------
+	
+	var r= document.getElementsByName("r");
+	console.log(r);
+	 
+	//선택된 항목으로 지정하기
+	r[1].setAttribute("checked","checked")
+	
+	var c = document.getElementsByName("c");
+	
+	console.log(c)
+	
+// 	c[0].setAttribute("checked","checked")
+// 	c[1].setAttribute("checked","checked")
+// 	c[2].setAttribute("checked","checked")
+
+	for(var i=0;i<3;i++){ //i, 0~2, 1증가
+		c[i].setAttribute("checked","checked")
+	}
+	
+	
+	
+	
+};
+
+
+</script>
+</head>
+<body>
+
+<h1 id="test">form 테스트</h1>
+<hr>
+<form action="#" method="get" id="myForm">
+	<input type="text" name="data1"/><br>
+	<input type="text" name="data2"/><br><br>
+	
+	<input type="radio" name="r" value="A"/>
+	<input type="radio" name="r" value="B"/>
+	<input type="radio" name="r" value="C"/><br><br>
+	
+	<input type="checkbox" name="c" value="E"/>
+	<input type="checkbox" name="c" value="F"/>
+	<input type="checkbox" name="c" value="G"/>
+
+
+</form>
+
+
+
+</body>
+</html>

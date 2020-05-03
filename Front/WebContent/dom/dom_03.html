@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>20200501 dom_03</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            //<img>  요소노드 생성
+            var img = document.createElement("img");
+            console.log(img);
+
+            // <img> 고유 속성 : src, width, height, alt, ...
+            // 전역(Global) 속성 : id, class, style, title, ...
+            // 고유속성, 전역속성 전부 HTML 표준 속성이다
+
+            // 이미지 경로 삽입( src 속성)
+            img.src = "https://pbs.twimg.com/profile_images/1119896109483089920/btBZVXxZ_400x400.jpg";
+
+            // 이미지 너비 설정 ( width 속성)	
+            img.width = "300";
+
+            //이미지 높이 설정(style)설정
+            img.style.height = "200px";
+
+
+            //<body> 태그에 <img> 태그 추가하기 ( 화면에 보임)
+
+            var body = document.body;
+            body.appendChild(img);
+
+            //-----------------------------------------
+            console.log("----속성 값 가져오기---")
+            console.log(img.src)
+            console.log(img.width)
+            console.log(img.height)
+
+            //---------------------------------------
+
+            // 	비표준 속성 설정하기
+            img.setAtib("myAttr", "apple")
+
+            // 	비표준 속성에 반응하지않는다
+            img.myAttr = "Banana";
+
+            //비교푼 속성 불러오기
+            console.log(img.getAttribuete());
+
+
+            // 	표준속성 다루기
+
+            console.log(img.getAttribute("src"));
+            img.setAt
+
+
+        };
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
