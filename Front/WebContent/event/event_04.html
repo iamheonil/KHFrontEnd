@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            function randomNumLeft(min, max) {
+                min = Math.ceil(2)
+                max = Math.floor(9);
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            
+            function randomNumRight(min, max) {
+                min = Math.ceil(1)
+                max = Math.floor(9);
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            function reMaker() {
+                innum1.value = randomNumLeft()
+                innum2.value = randomNumRight()
+                userRes.value = "";
+            }
+
+            var num1 = randomNumLeft();
+            var num2 = randomNumRight();
+            console.log(num1)
+            console.log(num2)
+            var numresult = randomNumLeft * randomNumRight;
+
+            innum1.value = num1 = randomNumLeft();
+            innum2.value = num2 = randomNumRight();
+
+            var sub = document.getElementById("submit");
+
+            sub.onclick = function() {
+                console.log(userRes.value)
+                if (userRes.value == numresult) {
+                    alert("정답입니다!")
+                    ok.value++
+                } else {
+                    alert("오답임니다!")
+                    no.value++
+                }
+                reMaker()
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+
+    <h1>워어 구구단 퀴즈</h1>
+    <hr>
+
+    <input type="text" id="innum1" value="" readonly> X <input type="text" id="innum2" readonly>
+    <br>
+    <br>
+    = <input type="text" id="userRes"> <button id="submit">결과 확인</button>
+    <br>
+    <br>
+
+    <hr>
+    정답수 : <input type="text" id="ok" value=0 readonly> &nbsp; 오답수 : <input type="text" id="no" value=0 readonly>
+
+</body>
+
+</html>

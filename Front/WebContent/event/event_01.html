@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        function func() {
+
+            var data = 10;
+            var result = data + 1000;
+
+            console.log("연산 결과")
+            console.log(result)
+
+            alert("이벤트 속성의 값으로 작성할 코드가 너무 길어지면\n" + "함수를 따로 만들어서 호출해주세요!")
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>EVENT</h1>
+
+    <!-- div 요소에서 click 이벤트가 발생하면 실행될 스크립트 코드를 onclick 속성의 값으로 작성한다. -> 나는 글씨를 클릭했을 때 이벤트 발생하기를 원해서 span을 따로 만들어 추가했다. -->
+    <div><span onclick="alert(1+2)">ㅎㅏ하</span></div>
+
+    <br>
+
+    <div onmousemove="console.log('HI');" onclick="func();">호호</div>
+
+</body></html>

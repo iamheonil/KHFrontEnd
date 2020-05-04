@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style type=text/css>
+        body {
+            width: 970px;
+        }
+
+        button {
+            width: 70px;
+            height: 50px;
+            margin: auto;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            /* 
+            // 이벤트리스너 등록 : addEventListener
+            btnOk.addEventListener("click", function() {
+                alert("클릭!@!")
+            })
+            
+            // 이벤트리스너 해제 : removeEventListener
+            btnTest.removeEventListener("click", function() {
+                alert("클리익!@#")
+            })
+            
+            **
+            익명함수로 같은 코드를 작성해도 같은 함수가 아니다.
+            removeEventListener 동작하지 않는다.
+            그러므로 익명함수가 아닌 함수를 정의해서 사용해야 한다.
+            **
+            */
+
+
+            // 함수를 정의하여 이벤트 리스너 등록하기
+            // 이벤트리스너 등록 : addEventListener
+            btnOk.addEventListener("click", clicked)
+
+            // 이벤트리스너 해제 : removeEventListener
+            btnTest.addEventListener("click", unclicked)
+
+
+            // ----
+
+            // 전부 전역함수로 작성할 것.
+            // 이번에는 btnTest 객체에 마우스가 올라가면 글자색을 빨간색으로
+            btnTest.addEventListener("mouseenter", fontcolorsR);
+
+            // 이번에는 btnTest 객체에 마우스가 내려가면 글자색을 검은색으로
+            btnTest.addEventListener("mouseleave", fontcolorsB)
+        };
+
+
+
+        // 전역함수로 함수 정의
+        function clicked() {
+            alert("전역함수의 확인버튼 클릭")
+        }
+
+        function unclicked() {
+            alert("제거왕료")
+            btnOk.removeEventListener("click", clicked)
+        }
+
+        function fontcolorsR() {
+            btnTest.innerHTML = "<h3 style='color: red';>gd</h3>"
+        }
+
+        function fontcolorsB() {
+            // btnTest.removeEventListener("mouseleave", fontcolorsR)
+            btnTest.innerHTML = "<h3 style='color: Black';>gd</h3>"
+        }
+    </script>
+</head>
+
+<body>
+
+    <button id="btnOk">화긴버튼</button>
+    <button id="btnTest">테스트 버튼</button>
+
+</body></html>

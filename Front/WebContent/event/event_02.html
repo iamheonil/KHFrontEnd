@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log(btnOk);
+
+            btnOk.onclick = function() {
+                alert('hi')
+            }
+
+            btnOk.onmouseover = function() {
+                console.log("Over")
+            }
+
+
+
+            // ----
+
+
+            var btn = document.getElementById("btnTest");
+            btnTest.onkeydown = function() {
+                console.log("down")
+            }
+
+            btn.onkeypress = function() {
+                console.log("pressing")
+            }
+
+            btn.onkeyup = function() {
+                console.log("up")
+            }
+
+            // ----
+            inputTest.onfocus = function() {
+                btnOk.innerHTML = "<h1 style='color: red;'>focus</h1>"
+            }
+
+            inputTest.onblur = function() {
+                btnOk.innerHTML = "<h3 style='color: blue;'>Blur</h3>"
+            }
+            
+        };
+    </script>
+</head>
+
+<body>
+
+    <button id="btnOk">확인</button>
+
+    <button id="btnTest">테스트</button>
+
+    <input type="text" id="inputTest">
+
+</body></html>
