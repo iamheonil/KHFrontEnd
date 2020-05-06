@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <!-- <link href="../resources/js/jquery-3.5.1.js"> -->
+
+    <!-- 서버가 가지고 있는 파일을 이용한 jQuery Lib 설치(배포) -->
+    <!--
+    <script type="text/javascript" src="../resources/js/jquery-3.5.1.js">
+    </script>
+-->
+    <!-- HTML 파일 외부에서 .js 파일을 가져오기 위해 <script> 태그를 사용할 때
+    innerHTML영역(<script> </script>) 사이에는 코드를 작성하면 안된다.-->
+
+    <!-- src 속성을 지정한 <script> 태그안에 별도의 자바스크립트 코드가 작성되면 안된다. -->
+
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+    <style type="text/css">
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var jQueryP1 = $("#p1"); // jQuery
+            var jsP1 = document.getElementById("p1"); //js
+
+            // var jsP1 = p1; 축약코드
+
+            console.log(jQueryP1);
+
+            console.log(jsP1);
+
+
+            // 순수 JS DOM 객체를 이용한 CSS 지정
+
+            jsP1.style.color = "red";
+
+            jQueryP1.css("border", "1px solid #ccc");
+
+            //            jQueryP1.style.background = "tomato";
+
+            //            jQueryP1.css.color = "red";
+
+
+            //            console.log($('p'))
+
+            $('p').css("background", "skyblue")
+
+
+            var p3 = document.getElementById("p3"); // JS
+            var $p3 = $("#p3"); // jQuery
+
+            console.log("--- JS ---")
+            console.log(p3)
+
+            console.log("--- jQ ---")
+            console.log($p3)
+
+
+
+            // -----------------------
+
+
+            // .css() 속성을 사용하게 되면 css속성이 인라인 속성으로 처리된다.
+            // style="";
+            $(".p2").css("border", "15px groove dodgerblue")
+
+            $("p:last-child").css("background", "tomato");
+            
+            // ----------------------
+            
+            console.log("---- JS ----")
+            console.log(window.p3)
+            
+            var $p3Dom = $(p3);
+            // JSDOM -> jQuery DOM 변환
+            
+            console.log("---- $jQ ----")
+            console.log($p3Dom)
+        })
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>ㅎㅎ</h1>
+    <hr>
+
+    <div>
+        <p id="p1">ㅠㅠ</p>
+        <p class="p2">피고내</p>
+        <p id="p3">한시간 남아따!</p>
+    </div>
+</body>
+
+</html>
