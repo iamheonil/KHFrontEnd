@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
 
+    <style type="text/css">
+        body {
+            font-family: HELVETICA;
+        }
+    </style>
+
     <script type="text/javascript">
-        window.onload = function() {
+        function showAlert() {
+            var res = alert("Message")
 
-            function randomNumLeft(min, max) {
-                min = Math.ceil(2)
-                max = Math.floor(9);
-                return Math.floor(Math.random() * (max - min)) + min;
+            console.log(res) // 반환 값이 없다, Undefined
+
+        }
+
+        function showConfirm() {
+            var res = confirm('ㅎㅇ')
+
+            console.log(res)
+
+            if (res) {
+                document.getElementsByTagName("li")[1].style.color = "blue";
+            } else {
+                document.getElementsByTagName("li")[1].style.color = "red";
             }
+        }
+
+
+
+        function showPrompt() {
+            var res = prompt('아래에 값을 입력해주세요.')
+
+            console.log(res)
             
-            function randomNumRight(min, max) {
-                min = Math.ceil(1)
-                max = Math.floor(9);
-                return Math.floor(Math.random() * (max - min)) + min;
+            if (res == "싫어") {
+                alert('싫다고?')
+            } else if (res == "좋아") {
+                alert('좋다고?')
+            } else {
+                alert('어떡하라구 ㅠㅠ')
+                showPrompt()
             }
-
-            function reMaker() {
-                innum1.value = randomNumLeft()
-                innum2.value = randomNumRight()
-                userRes.value = "";
-            }
-
-            var num1 = randomNumLeft();
-            var num2 = randomNumRight();
-            console.log(num1)
-            console.log(num2)
-            var numresult = randomNumLeft * randomNumRight;
-
-            innum1.value = num1 = randomNumLeft();
-            innum2.value = num2 = randomNumRight();
-
-            var sub = document.getElementById("submit");
-
-            sub.onclick = function() {
-                console.log(userRes.value)
-                if (userRes.value == numresult) {
-                    alert("정답입니다!")
-                    ok.value++
-                } else {
-                    alert("오답임니다!")
-                    no.value++
-                }
-                reMaker()
-            }
-        };
-
+        }
     </script>
 </head>
 
 <body>
 
-    <h1>워어 구구단 퀴즈</h1>
+    <h1>자바스크립트에서 제공하는 기본 대화상자</h1>
+    <h3>Interaction, 대화상자(상호작용박스)</h3>
     <hr>
 
-    <input type="text" id="innum1" value="" readonly> X <input type="text" id="innum2" readonly>
-    <br>
-    <br>
-    = <input type="text" id="userRes"> <button id="submit">결과 확인</button>
-    <br>
-    <br>
+    <h3>alert, confirm, prompt</h3>
 
-    <hr>
-    정답수 : <input type="text" id="ok" value=0 readonly> &nbsp; 오답수 : <input type="text" id="no" value=0 readonly>
+    <ol>
 
-</body>
+        <li>확인 버튼과 메세지를 출력하는 Alert 창</li>
+        <input type="button" onclick="showAlert()" value="확인">
 
-</html>
+        <li>확인, 취소 두가지와 메세지가 들어가는 Confirm 창<br>
+            (반환값이 Boolean 타입이다. True(확인) Or False(취소))</li>
+        <input type="button" onclick="showConfirm()" value="확인">
+
+        <li>확인, 취소 두가지와 텍스트필드, 메세지가 들어가는 Prompt 창</li>
+        <input type="button" onclick="showPrompt()" value="확인">
+    </ol>
+
+</body></html>
