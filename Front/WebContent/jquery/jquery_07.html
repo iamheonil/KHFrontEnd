@@ -30,9 +30,55 @@
     </style>
 
     <script type="text/javascript">
+        $(document).ready(function() {
 
+            var $div = $("<div>"); // 새로운 div 객체 생성
 
+            console.log($div);
 
+            var $myDiv = $("#myDiv"); // myDiv의 노드 선택
+
+            $myDiv.append($div); // #myDiv 의 자식으로 새로운 <div> 추가
+
+            $div.html("Test"); // html == innerHTML
+
+            // ---
+
+            var $newDiv = $("<div>")
+                .append($("<ul>")
+                    .append($("<li>").html("Hi"))
+                    .append($("<li>").html("HEllO"))
+                    .append($("<ul>")
+                        .append($("<li>").html("Hi2"))
+                        .append($("<li>").html("HEllO2"))
+                    ));
+
+            console.log($newDiv);
+            $myDiv.append($newDiv);
+            
+            
+            var $cloneDiv = $newDiv.clone();
+            
+            $myDiv.append($cloneDiv);
+            
+            // -----
+            
+            $("<div>")
+            .append( $("<ul>")
+                    .append( $("<li>").html("ggggggghi"))
+            ).appendTo( $("#myDiv"));
+
+            
+            // -----
+            
+            // 이미 DOM TREE에 추가된 노드는 이동된다.            
+            $(document.body).append($div);
+
+            //$(document.body)
+            // JS DOM 객체인 document.body 를 jQuery DOM 객체로 변환한 것 = <body>태그를 뜻함
+            
+            
+        })
     </script>
 
 
@@ -40,6 +86,10 @@
 
 <body>
 
+    <div id="myDiv">
 
+        <p> Hi ! </p>
+
+    </div>
 
 </body></html>

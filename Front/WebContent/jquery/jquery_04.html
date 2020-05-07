@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
@@ -30,9 +31,81 @@
     </style>
 
     <script type="text/javascript">
+        $(document).ready(function() {
+
+            console.log($("1").eq(1));
+            console.log($("p").get(1));
+
+            // jQuery 는 변수명 앞에다가 $를 쓰는 연습을 하자
+            var $p = $("p")
+            console.log($p)
+
+            // 여러 개 선택된 jQuery DOM객체에 CSS() 이용하면 모두 적용됨
+            $p.css("border", "1px solid skyblue")
+
+            // - - - - - - - - - - - - 
+
+            console.log("- - - - - - - - - - - - - - - ")
+            // jQuery 객체 반환하기
+            console.log($p.eq(1))
+
+            // JS DOM 객체 반환
+            console.log($p.get(1))
+
+            // JS DOM 객체 반환 방법 두번째
+            console.log($p[1]);
+
+            console.log("- - - - - - - - - - - - - - - ")
+
+            var p = document.getElementsByTagName("p");
+            console.log(p);
+
+            p[0].style.color = "red"; // js 객체에 스타일 적용하기
 
 
+            var $p1 = $("p").eq(1); // JS -> jQuery 객체 변환
+            $p1.css("color", "skyblue");
+            console.log($p1);
 
+            for (var i = 0; i < $("p").length; i++) {
+                $("p").eq(i).css("background", "red")
+            }
+
+            console.log("- - - - - - - - - - - - - - - ")
+
+            $("p").each(function(i, e) {
+
+                //                console.log("하이")
+
+                console.log("--" + i + "--")
+                console.log(e) // JS DOM
+
+                console.log($(e)) // JS DOM -> jQuery DOM 변환
+
+            })
+            console.log("- - - - - - - - - - - - - - - ")
+            console.log("- - - - - - - - - - - - - - - ")
+            console.log("- - - - - - - - - - - - - - - ")
+
+
+            $("p").each(function(i, e) {
+                console.log("-- " + i + " --")
+                console.log(e);
+
+                console.log(this)
+                console.log($(this))
+            })
+            
+            
+            console.log("- - - - - - - - - - - - - - - ")
+            console.log("- - - - - - - - - - - - - - - ")
+            console.log("- - - - - - - - - - - - - - - ")
+            
+            $("p").each(function() {
+                
+                $(this).css("font-style", "ITALIC")
+            })
+        })
     </script>
 
 
@@ -40,6 +113,27 @@
 
 <body>
 
+    <!--
+    <div>
 
+        <p id="1">P 1번</p>
+        <p id="2">P 2번</p>
 
+        <p class="1">1번</p>
+        <p class="2">2번</p>
+
+    </div>
+-->
+
+    <hr>
+
+    <div>
+
+        <span>하나</span>
+        <p>둘</p>
+        <pre>셋</pre>
+        <p>넷</p>
+        <p>다섯</p>
+
+    </div>
 </body></html>

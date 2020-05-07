@@ -30,24 +30,13 @@
     </style>
 
     <script type="text/javascript">
+
         $(document).ready(function() {
-
-            // #myDiv 의 첫번째 자식으로 <h1> 태그 생성
-            $("#myDiv").prepend($("<h1>").text("HI! PREPEND TEST"));
             
-            // $("<li>").text("영").prependTo($("#myDiv").children());
-            // #myDiv 의 자식요소가 두개이므로 <h1>과 <ul> 두 곳 모두에 태그가 추가된다.
             
-            $("<li>").text("영").prependTo($("#myDiv").children("ul"));
-            // 그러므로 ul을 지정해서 0(영)을 추가해준다.
             
-            // Before - 이전 형제로 <p>
-            $("#myDiv").before($("<p>").text("jQuery 진짜 어렵네 ㅇㅈ"))
-            
-            // After - 다음 형제로 <p>
-            $("#myDiv").after($("<p>").text("jQuery 진짜 어렵네 ㅠㅠ"))
-
         })
+
     </script>
 
 
@@ -55,14 +44,6 @@
 
 <body>
 
-    <div id="myDiv">
-        <ul>
-            <li>하나</li>
-            <li>둘</li>
-            <li id="third">셋</li>
-            <li>넷</li>
-            <li>다섯</li>
-        </ul>
-    </div>
+
 
 </body></html>

@@ -31,33 +31,43 @@
 
     <script type="text/javascript">
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             
-            console.log($("div").children()) // div > *
+            var $myDiv = $("#myDiv")
             
-            console.log($("div").children().children()) // div > * > *
+            // 기존에 가지고 있던 내용물을 전부 덮어 씌운다.
+            $("#myDiv").html("<h2>안녕하세요</h2>");
             
-            console.log($("div").children().children("#third")) // div > * > #Third
+            // innerHTML 내용물을 읽어서 변수에 저장하기
+            var h = $myDiv.html();
+            
+            console.log(h)
+            
+            h += "<div>insertNode</div>";
+            
+            console.log(h)
+            
+            // 편집을 거친 HTML 텍스트를 #myDiv에 반영하기
+            $myDiv.html(h);
+            
+            // 새로운 p태그 생성
+            var $p = $("<p>");
+            
+            // p태그 내부에 텍스트 추가하기
+            $p.text("안녕하쓰여");
+            
+            $myDiv.append($p);
+            
+            // 태그가 반영된다.
+            $myDiv.html("<h1>HTML</h1>");
+            
+            // 태그가 반영되지 않은 단순 text가 출력된다.
+            // $myDiv.text("<h1>HTML</h1>");
+            
+            $myDiv.html("&lt;h1>HTML&lt;/h1> &lt;&gt;");
+            // &lt; < 
+            // &gt; >
 
-            
-            console.log("- - - - - - - - - - - - - - - - - - - ")
-            
-            console.log($("#here"))
-            console.log($("#here").parent())
-            console.log($("#here").parents())
-            
-            console.log($("#here").parents("#third"))
-            
-            console.log("- - - - - - - - - - - - - - - - - - - ")
-            
-            console.log($("#third").next())
-            console.log($("#third").nextAll())
-
-            console.log($("#third").prev())
-            console.log($("#third").prevAll())
-            
-            console.log("- - - - - - - - - - - - - - - - - - - ")
-            
         })
 
     </script>
@@ -67,20 +77,10 @@
 
 <body>
 
-    <div>
-        <ul>
-            <li>하나</li>
-            <li>둘</li>
-            <li id="third">셋
-                <ul>
-                    <li>3-1</li>
-                    <li id="here">3-2</li>
-                    <li>3-3</li>
-                </ul>
-            </li>
-            <li>넷</li>
-            <li>다섯</li>
-        </ul>
-    </div>
+<div id="myDiv">
+    
+    <h1>TEST</h1>
+    
+</div>
 
 </body></html>

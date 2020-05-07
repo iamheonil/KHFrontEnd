@@ -30,16 +30,52 @@
     </style>
 
     <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("p").css("border", "3px groove skyblue")
 
 
 
+            $("p").each(function() {
+                if ($(this).is($("#stop"))) {
+                    // return false; // each() 함수 종료 코드
+
+                    // return; // 이번 한번만 함수 종료
+                    
+                    return false; // 이후 모든 함수 종료
+                    
+                    // 콜백함수에서 return false; 로 false 값을 전달하면 콜백함수를 호출한 객체가 중단된다.
+                }
+
+                $(this).css("background", "tomato")
+                console.log($(this).is($("#stop")))
+            })
+
+            // --------------------
+
+
+            // div태그의 하위노드중에서 id = stop 을 찾는다.
+            console.log($("div").find("#stop"))
+
+            // 위 아래 결과는 똑같은데 셀렉터 쓰는 방식 차이인듯.
+            console.log($("div #stop"))
+
+            var $div = $("div");
+            console.log($div.find("#stop"))
+
+
+        })
     </script>
 
 
 </head>
 
 <body>
-
-
-
+    <div>
+        <span>물보라를 일으켜</span>
+        <p>Da Da Da Da</p>
+        <pre>3산</pre>
+        <p id="stop">4반</p>
+        <p>Da Da Da Da</p>
+    </div>
 </body></html>
