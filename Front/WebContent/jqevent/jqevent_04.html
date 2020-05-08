@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> ::: 억! </title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style type="text/css">
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // 전송 버튼을 클릭하면 입력된 메세지를 alert()
+
+            var text = document.getElementById("msg");
+
+            $("input[name~='msg']").focus();
+
+            $("#btnSend").click(function() {
+                // $("객체").val() - value 속성의 값
+                 alert("입력 메세지" + " = " +$("input[name~='msg']").val())
+                // alert("입력 메세지" + " = " +$("input[name~='msg']").val("Setter"))
+            });
+            
+
+            // 메시지 입력창에서 엔터키를 누르면 #btnSend에 클릭이벤트를 발생시킨다.
+            
+            $("input[name~='msg']").val("");
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div>
+
+        <input type="text" name="msg">
+        <button id="btnSend">전송</button>
+
+    </div>
+
+</body></html>

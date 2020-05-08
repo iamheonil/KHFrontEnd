@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> ::: 억! </title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style type="text/css">
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var $btnOk = $("<button id='btnOk'>확인</button>")
+
+            $("#btnAlert").on("click", function() {
+                // 이벤트 등록(리스너) 코드 안에 이벤트 등록(리스너)하기 !금지! 절대 하지말 것!
+                // alert('아 몰라');
+                console.log('몰라');
+
+                // <div> 태그의 첫번째 자식으로 btnOk 추가 - DOM 트리 추가된다.
+                $btnOk.prependTo($("div"));
+
+                // 이벤트 리스너 코드에서 이벤트리스너 등록하는 코드를 또 적게되면 등록되는 코드가 중첩되어 처리된다.
+                // -> 한번의 이벤트에 여러번 콜백함수가 호출됨.
+                // 그러므로 조심해서 써야한다.
+                // $("#btnOk").on("click", function() {
+                // alert("HELLO")
+                // })
+            });
+
+            // #btnOk 요소에 click 이벤트 리스너 등록하기
+
+            // 위의 이벤트 리스너 코드와 아래의 이벤트 리스너 코드는 별개이기때문에
+            // 아래의 #btnOk 객체는 현재 null과 같다, 따라서 버튼을 아무리 눌러도 반응이 없다.
+            $("#btnOk").on("click", function() {
+                alert("HELLO")
+            });
+
+            // DOM트리에 존재하지 않는 객체를 찾아서 출력하면 n.fn.init 이라고 출력되지만 내용물은 비어있다.
+            console.log($("#btnOk"));
+
+            // 요건 있다
+            console.log($("#btnAlert"));
+
+            // ----------
+
+            // 동적(Dynamic) 으로 생성된 요소에는 이벤트 리스너를 곧바로 등록할 수 없다.
+            // -> 이벤트리스너를 등록하는 시점에는 존재하지 않아서
+
+            // 해결방법 : 이벤트 리스너를 동적으로 바인딩하면 된다.
+            // 이벤트가 bind되는 시점에 존재하는 부모 요소에 이벤트를 등록.
+            // 동적으로 추가될 위치에 이벤트 리스너를 등록한다.
+
+            // on()함수의 두번째 인자로 선택자를 작성할 수 있다.
+            // 이벤트가 동작하는 범위를 조절할 수 있다.
+            $("div").on("click", "#btnOk", function() {
+                // 이벤트 리스너를 div태그에 적용한다,
+                // 이벤트에 대한 반응은 "div #btnOk" 에서 한다.
+                alert("으이이잉?")
+
+                // #btnAlert 의 이벤트 리스너 제거
+                // $("#btnAlert").off("click");
+
+                // #btnAlert 의 모든 이벤트 제거
+                // $("#btnAlert").off();
+
+
+            })
+
+
+            //            var btnCancle = $("#btnCancle")
+            //            
+            //            console.log(btnCancle)
+
+            $("#btnCancle").on("click", function() {
+                // console.log("cancle button")
+
+                // $("#btnOk").off(); // 잘못된 방식
+                
+                // $("div").off("click") // div 태그의 모든 "클릭" 이벤트를 제거한다.
+                
+                $("div").off("click", "#btnOk")
+                $("div").off("click", "#btnAlert")
+                alert("제거 왕료!")
+            });
+
+            $("div").on("click", function() {
+
+
+                // $("#btnAlert").off();
+                // $("#btnOk").off();
+            })
+
+
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div>
+
+        <button id="btnAlert">알림</button>
+        <button id="btnCancle">이벤트 제거</button>
+
+    </div>
+
+</body>
+
+</html>

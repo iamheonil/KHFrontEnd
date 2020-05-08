@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> ::: 억! </title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style type="text/css">
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#btnOk").on("click", function() {
+                
+                // console.log(this) // JS DOM
+                console.log($(this)) // JQ DOM
+                // alert("HIHHIIH")
+            })
+            
+            $("#btnAlert").on("click", function(e) {
+                // 이벤트리스너 함수의 첫번째 인자는 발생한 이벤트 객체
+                console.log(e)
+                
+                // - - - - - - 
+                
+                // 이벤트 객체는 target 프로퍼티를 가지고 있음
+                // target 값은 이벤트가 발생한 객체
+                console.log(e.target)
+                
+                // -=-=-=-=-=-=-=-=--=-=-==-=--=-==--=-==-
+                
+                $(this).html("<h1 style='color: red';>변경</h1>")
+                
+                // #btnAlert 를 클릭하면 btnOk도 같이 클릭된 것으로 처리
+                
+                $("#btnOk").click();
+                // 위 아래 동일
+                $("#btnOk").trigger("click");
+            })
+
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <button id="btnOk">확인</button>
+    <button id="btnAlert">알림</button>
+
+</body></html>

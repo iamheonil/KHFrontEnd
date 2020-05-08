@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> ::: 억! </title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style type="text/css">
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        function sayHi() {
+            alert("HI!!")
+        }
+
+        function red() {
+            $(this).css("color", "red")
+        }
+
+        var blue = function() {
+            $(this).css("color", "blue")
+        }
+
+        $(document).ready(function() {
+
+            //            $("#btnOk").on("click", sayHi)
+            //            $("#btnOk").on("mouseenter", red)
+            //            $("#btnOk").on("mouseleave", blue)
+
+            // --
+
+            $("#btnOk").on({
+                "click": sayHi,
+                "mouseenter": red,
+                "mouseleave": blue
+            })
+
+            // - - - - - On - 계속 동작
+            //  - - - -  One - 한번 동작
+
+            // $("#btnOk").one({
+            //    "click": sayHi,
+            //    "mouseenter": red,
+            //    "mouseleave": blue
+            //})
+
+            // - - - - - - - - - - - 모든 버튼들의 Click 이벤트 제거
+            $("button").off("click")
+
+            // click 이벤트 리스너 다시 등록
+            $("div > button#btnAlert").on("click", sayHi)
+            
+            
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div>
+
+
+        <button id="btnOk">확인</button>
+        <button id="btnAlert">알림</button>
+
+    </div>
+
+</body></html>

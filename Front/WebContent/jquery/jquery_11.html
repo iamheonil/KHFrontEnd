@@ -24,19 +24,71 @@
     </script>
 
     <style type="text/css">
-
-
-
-    </style>
+        
+        /* 임베디드 방식 스타일 적용 */
+        div {
+            font-style: italic;
+            color: red !important;
+        }
+    
+</style>
 
     <script type="text/javascript">
-
         $(document).ready(function() {
+
+            var $div = $("div")
+            console.log($div);
+
+            console.log($div.css("width"))
+
+            $div.css("width", "500px")
+
+            console.log($div.css("width"))
+
+            $($div).css(["width", "height"])
+
+            console.log($($div).css(["width", "height"]))
             
             
+            // 자바스크립트의 객체(Object) 타입
+            // jQuery에서는 PlainObject라고 불린다.
+            var obj = {
+                "key": "value",
+                "key": 123,
+                "key": true,
+                "key": null
+            }
+            // 한번에 여러가지 스타일을 지정할 수 있다.
+            
+            $div.css({
+                "width": "400px",
+                "height": "300px",
+                "border-color": "blue",
+                "display": "inline-block"
+            })
+            
+            // --------
+            
+            // 여러 개의 스타일 값을 객체(Object)로 가져오기
+            var objres = $div.css(["width", "height", "border"])
+            
+            console.log(objres);
+            
+            // 값 하나만 가져오기
+            console.log(objres.width);
+            
+            // 값 입력해보기
+            objres.width = "750px";
+            objres.height = "750px";
+            
+            console.log(objres);
+            
+            $div.css(objres);
+
+            // .csS() 함수는 인라인 방식으로 스타일을 적용한다
+            $div.css("color", "blue");
             
         })
-
     </script>
 
 
@@ -44,6 +96,13 @@
 
 <body>
 
+    <div style="width: 300px; height: 200px; border: 1px solid red;">
 
+        <p>ㅎㅇ1</p>
+        <p>ㅎㅇ2</p>
+        <p>ㅎㅇ3</p>
+
+
+    </div>
 
 </body></html>
