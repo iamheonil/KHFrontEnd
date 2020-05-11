@@ -21,14 +21,32 @@
 
             $("#btnSend").click(function() {
                 // $("객체").val() - value 속성의 값
-                 alert("입력 메세지" + " = " +$("input[name~='msg']").val())
+                // alert("입력 메세지" + " = " +$("input[name~='msg']").val())
+                alert("입력 메세지" + " = " +$("input[name~='msg']").val())
                 // alert("입력 메세지" + " = " +$("input[name~='msg']").val("Setter"))
             });
             
 
             // 메시지 입력창에서 엔터키를 누르면 #btnSend에 클릭이벤트를 발생시킨다.
+            // KeyDown 이벤트를 활용한다.
             
-            $("input[name~='msg']").val("");
+            $("div input[name~='msg']").keydown(function( e ) {
+                
+                // console.log("down") // 동작 확인
+                
+                // console.log(e) // 이벤트 확인
+                
+                // console.log(e.keyCode) // 키코드 확인
+                
+                // 엔터키는 13번
+                if(e.keyCode == 13) {
+//                    alert("입력 메세지" + " = " +$("input[name~='msg']").val())
+                    
+                    $("#btnSend").click();
+                }
+                
+            });
+    
         });
     </script>
 

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+        /* 이미지 슬라이더 박스(div) */
+        #sliderbox {
+            width: 600px;
+            height: 400px;
+            border: 1px solid #ccc;
+
+            /* 외부정렬: 가운데 */
+            margin: 0 auto;
+
+            /* div영역을 벗어난 부분 안보이게 처리하기 */
+            overflow: hidden;
+        }
+
+        /* 이미지 목록 ( ul ) */
+        #slider {
+            /* ul태그의 기본 스타일 없애기 */
+            padding: 0;
+            /* 내부여백 제거 */
+            margin: 0;
+            /* 외부여백 제거 */
+            list-style: none;
+            /* 리스트스타일(disc) 제거 */
+
+            /* 자식요소 absolute박스의 기준점이 되는 설정 */
+            position: relative;
+
+        }
+
+        /* 이미지 항목 */
+        #slider li {
+            /* 자유롭게 위치 이동시킬 수 있도록 설정 */
+            position: absolute;
+        }
+
+        /* 이미지 */
+        #slider li img {
+            /* 모든 이미지를 같은 크기 고정시키기 */
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // 모든 이미지 항목 리스트
+            var $slider_list = $("#slider li")
+            // 	console.log( $slider_list )	
+
+            // 모든 이미지 항목을 오른쪽으로 보내기(숨기기)
+            // 	$slider_list.css("left", "600px")
+            $slider_list.css("left", $("#sliderbox").css("width"))
+
+            // ------------------------------------------------------
+
+            //새로고침하면 첫번째 이미지를 div 안쪽으로 보내 보이도록 한다
+            $slider_list.eq(0).css("left", 0);
+
+            // 	$("#slider li:first-child").css("left", 0);
+
+            // ------------------------------------------------------
+
+
+            var sliderClick = function() {
+                $("#sliderbox").click();
+            }
+
+            var tid = setInterval(sliderClick, 3000);
+
+
+            //#sliderbox에 클릭할 때 마다 한 장씩 교체하기
+            //	-> 이미지 슬라이드
+
+            var curSlide = 0; //현재 슬라이드 인덱스
+            $("#sliderbox").click(function() {
+
+                //클릭이 될 때마다 타이머 객체 제거하고 다시 등록
+                clearInterval(tid);
+                tid = setInterval(sliderClick, 3000);
+
+
+                // 		console.log("clicked") //클릭이벤트 확인
+
+                var nextSlide = curSlide + 1; //다음 슬라이드 인덱스
+
+                //이미지 개수만큼 보정하기
+                nextSlide %= $slider_list.length;
+
+
+                //순환구조 확인
+                // 		console.log( curSlide + " : " + nextSlide );
+
+
+                //현재 슬라이드 숨기기 : curSlide
+                //	<div> 태그의 오른쪽으로 보내기
+                $slider_list.eq(curSlide).animate({
+                    "left": "-=" + $("#sliderbox").css("width")
+                })
+
+                //보여줄 다음 슬라이드를 오른쪽으로 보내기
+                $slider_list.eq(nextSlide).css("left", $("#sliderbox").css("width"))
+
+                //다음 슬라이드 보여주기 : nextSlide
+                //	<div> 태그의 안쪽으로 보내기
+                $slider_list.eq(nextSlide).animate({
+                    "left": "-=" + $("#sliderbox").css("width")
+                })
+
+
+
+                //순환구조 만들기
+                curSlide++;
+
+                //이미지 개수만큼 보정하기
+                curSlide %= $slider_list.length;
+            })
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div id="sliderbox">
+        <ul id="slider">
+            <li><img src="https://upload.wikimedia.org/wikipedia/ko/c/cd/Doraemon.PNG" style="left: 0px;"></li>
+            <li><img src="https://dimg.donga.com/wps/NEWS/IMAGE/2019/08/04/96827148.3.jpg"></li>
+            <li><img src="https://image.ytn.co.kr/general/jpg/2017/0823/201708231145061443_d.jpg"></li>
+            <li><img src="https://lh3.googleusercontent.com/proxy/z8Ge3VatBOC2F_Wny5Z76_uikFKXdFiHx7VFI5O6O21nANz6JILMQ7eH-NbI868WS_aOGHoXxqT3Rx-w2BzTkO7AyoHqWjF3flRcZCiYeax9Pu-U46DFeMJk3GczSQZojIrh7OCeXMZYnXk6vpA5ilwquOtMFFIT3vLyluQybGcqPw5Ao1irYbGm42TGpPgy_oi3ugUL6vKH2GR_WV5qELMJsye8uL6OR6r54DjUh21egqITmXnJfFt0jAK0_XuMZlvfj4Tgt_GjAyWdzJkzLu8YJhfx1705xEpbEfHyX7V1K6ZyKtEGGLnwqsKuCe3WSZhenNoIOpPvSf5vwNfFqM27dfQ"></li>
+        </ul>
+    </div>
+
+</body></html>
+
+
+
+
+

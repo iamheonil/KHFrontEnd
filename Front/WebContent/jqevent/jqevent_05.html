@@ -1,32 +1,162 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title> ::: 억! </title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <style type="text/css">
-    
-        
-    
+        /* 이미지 슬라이더 박스 (div) */
+
+        #sliderBox {
+            width: 600px;
+            height: 400px;
+            /* border: 1px solid tomato; */
+
+            /* 외부정렬 (가운데정렬) */
+            margin: 0 auto;
+
+            /* width 600 height 400 벗어난 부분들은 잘라내어 안보이게 처리한다. */
+            overflow: hidden;
+
+        }
+
+        #slider {
+            /* 내부여백 제거 */
+            padding: 0px;
+
+            /* 외부여백 제거 */
+            margin: 0px;
+
+            /* 리스트스타일 제거 */
+            list-style: none;
+
+            position: relative;
+        }
+
+
+        /* 이미지 항목 */
+        #slider li {
+            /* 자유롭게 이동 가능하도록 설정한다. */
+            position: absolute;
+            left: 600px;
+
+        }
+
+        /* 이미지 */
+        #slider li img {
+            width: 600px;
+            height: 400px;
+        }
     </style>
-    
+
     <script type="text/javascript">
-    
-    $(document).ready(function() { 
-    
-    
-        
-    });
-    
-    
+        $(document).ready(function() {
+
+            var $slider_list = $("#slider li")
+            // console.log($slider_list);
+
+            // 모든 이미지 항목을 오른쪽으로 보내기
+            $slider_list.css("left", "603px")
+
+            // $slider_list.css("left", $("#sliderBox").css("width"));
+
+            // 새로고침 하면 첫번째 이미지를 div 안쪽으로 보내서 화면에 출력한다.
+            $slider_list.eq(0).css("left", 0);
+
+
+            var nowSilde = 0;
+
+            var sliderClick = function() {
+                $("#sliderBox").click();
+            }
+
+            //             var $js = $("#silder li img").mousedown(function(e) {
+            // console.log("으악")
+            
+            var tid = setInterval(sliderClick, 3000);
+            
+            $("#slider li img").mousedown(function() {
+                // console.log("클리쿠")
+
+                // 구조 확인
+                var nextSlide = nowSilde + 1;
+                // console.log(nowSilde + " : " + nextSlide);
+
+                // 이미지의 갯수만큼만 동작하게 보정
+                nextSlide %= $slider_list.length;
+
+                // 현재 슬라이드 숨기기 = nowSlide
+                // <div> 태그의 오른쪽으로 보내기
+                $slider_list.eq(nowSilde).css("left", "603px");
+
+                // 다음 슬라이드 보여주기 = nextSlide
+                // <div> 태그의 안쪽으로 보내기
+                $slider_list.eq(nextSlide).css("left", 0);
+
+                // 순환구조 만들기
+                nowSilde++;
+
+                // 이미지의 갯수만큼만 동작하게 보정
+                nowSilde %= $slider_list.length;
+
+
+                clearInterval(tid);
+                tid = setInterval(sliderClick, 3000)
+            });
+
+
+
+
+            setInterval(function() {
+                // console.log("클리쿠")
+
+                // 구조 확인
+                var nextSlide = nowSilde + 1;
+                // console.log(nowSilde + " : " + nextSlide);
+
+                // 이미지의 갯수만큼만 동작하게 보정
+                nextSlide %= $slider_list.length;
+
+                // 현재 슬라이드 숨기기 = nowSlide
+                // <div> 태그의 오른쪽으로 보내기
+                $slider_list.eq(nowSilde).css("left", "603px");
+
+                // 다음 슬라이드 보여주기 = nextSlide
+                // <div> 태그의 안쪽으로 보내기
+                $slider_list.eq(nextSlide).css("left", 0);
+
+                // 순환구조 만들기
+                nowSilde++;
+
+                // 이미지의 갯수만큼만 동작하게 보정
+                nowSilde %= $slider_list.length;
+
+            }, 3000)
+
+
+
+        });
     </script>
-    
-    
-    
+
+
+
 </head>
 
 <body>
-    
 
-    
+    <div id="sliderBox">
+
+        <ul id="slider">
+
+            <li><img src="https://upload.wikimedia.org/wikipedia/ko/c/cd/Doraemon.PNG" style="left: 0px;"></li>
+            <li><img src="https://dimg.donga.com/wps/NEWS/IMAGE/2019/08/04/96827148.3.jpg"></li>
+            <li><img src="https://image.ytn.co.kr/general/jpg/2017/0823/201708231145061443_d.jpg"></li>
+            <li><img src="https://lh3.googleusercontent.com/proxy/z8Ge3VatBOC2F_Wny5Z76_uikFKXdFiHx7VFI5O6O21nANz6JILMQ7eH-NbI868WS_aOGHoXxqT3Rx-w2BzTkO7AyoHqWjF3flRcZCiYeax9Pu-U46DFeMJk3GczSQZojIrh7OCeXMZYnXk6vpA5ilwquOtMFFIT3vLyluQybGcqPw5Ao1irYbGm42TGpPgy_oi3ugUL6vKH2GR_WV5qELMJsye8uL6OR6r54DjUh21egqITmXnJfFt0jAK0_XuMZlvfj4Tgt_GjAyWdzJkzLu8YJhfx1705xEpbEfHyX7V1K6ZyKtEGGLnwqsKuCe3WSZhenNoIOpPvSf5vwNfFqM27dfQ"></li>
+
+        </ul>
+
+    </div>
+
+
 </body></html>
