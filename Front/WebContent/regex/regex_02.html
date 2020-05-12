@@ -4,18 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
     <script type="text/javascript">
-    
-    
-    
+        $(document).ready(function() {
+
+            //            $("#uid").on("blur", function() {
+            //                console.log("blur 는 focus 를 잃었을 때!")
+            //            })
+
+            $("#uid").blur(function() {
+                console.log("간단히 작업한 blur")
+
+
+                // 어떤 글자든 8~12개 사이
+                // var regEx = /.{8,12}/ 우리가 지금 하려는 Form 검증에는 부적절 하다.
+                // 패턴만 체크한다.
+
+                // var regEx = /^.{8,12}/ // 문장 전체가 8~12글자인지 체크
+
+                // var regEx = /^[a-zA-Z]{8,12}$/ 소문자, 대문자 포함 8~12글자
+
+                // var regEx = /^[a-zA-Z0-9]{8,12}$/ 알파벳 + 숫자 8~12글자
+                // var regEx = /^[a-zA-Z\d]{8,12}$/ // 알파벳 + 숫자 8~12글자 \d -> 숫자
+
+                // var regEx = /^[a-zA-Z\d-_]{8,12}$/ // 알파벳 + 숫자 + -,_ 포함 8~12글자 \d -> 숫자
+                
+                // 숫자로 시작하면 안되고 알파벳 대소문자 숫자로 4~8글자 사이
+                // var regEx = /^[\D][a-zA-Z\d]{3,7}$/ 특수문자를 사용할 수 있게 되버린다.
+                // {3,7} 인 이유는 앞의 [\D]가 한칸을 차지하기 때문에 {4,8}로 하게되면
+                // 9글자가 입력된다.
+                
+                // 특수문자 시작하면 막아보자 ㅜㅜ                
+                var regEx = /^[A-Za-z][a-zA-Z\d]{3,7}$/
+                // 그냥 대소문자 시작이 아니라면 전부 부정해버리게 만들어 버림
+
+                if (!regEx.test($(this).val())) {
+                    alert("정규식 표현에 맞지 않읍니다.")
+                }
+            })
+        });
     </script>
 </head>
 
 <body>
-<h1>정규표현식</h1>
-<hr>
-<br>
-</body>
+    <h1>정규표현식</h1>
+    <hr>
+    <br>
 
-</html>
+    <div>
+        <input type="text" name="uid" id="uid"> 뚫룰룰룽
+    </div>
+
+
+</body></html>

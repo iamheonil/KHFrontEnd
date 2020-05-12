@@ -4,18 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+    <style type="text/css">
+        body {
+            width: 970px;
+        }
+
+        div {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+/*            text-align: center;*/
+        }
+        
+        span {
+           line-height: 1.5em;
+        }
+
+    </style>
+
+
+
     <script type="text/javascript">
-    
-    
-    
+        $(document).ready(function() {
+
+            // 이름 두글자 이상
+            // 아이디 6글자 이상 첫문자는 대문자만가능, 영,숫자로 구성
+            // 패스워드는 8글자 이상, 영숫자로 구성
+
+            // 모든 요소 blur 될 때 검증
+            // 조건에 검증 못하면 각 요소 밑에 경고 문구 출력
+            // 이름 - 한글만 가능합니다(2자 이상)
+            // 아이디 - 영어 숫자만 가능합니다 (6자 이상)
+            // 비번 - 8자 이상 작성하세요
+
+            var nameExr = /^[가-힣]{2,}$/
+            var idExr = /^[A-Z][a-zA-Z0-9]{5,}/
+            var passExr = /^[a-z0-9]{8,}$/
+
+            $("#uname").focus();
+            
+            $("#uname").blur(function() {
+                // console.log("uname 블러")
+
+                if (!nameExr.test($(this).val())) {
+                    $("#nameWar").text("한글만 가능합니다. (2자 이상, 영어, 숫자, 자음, 모음 사용 불가합니다)").css("color", "red")
+                    
+                    $("#sub").prop("disabled", true)
+                } else {
+                    $("#nameWar").text("Checked").css("color", "limegreen")
+                }
+            })
+
+            $("#uid").blur(function() {
+                // console.log("uid 블러")
+
+                if (!idExr.test($(this).val())) {
+                    $("#idWar").text("첫번째 글자는 대문자이어야 하며, 영어, 숫자만 입력 가능합니다.(6자 이상)").css("color", "red")
+                    $("#sub").prop("disabled", true)
+                } else {
+                    $("#idWar").text("멋진 아이디네요!").css("color", "limegreen");
+                }
+            })
+
+            $("#upass").blur(function() {
+                // console.log("upass 블러")
+                if (!passExr.test($(this).val())) {
+                    $("#passWar").text("8자 이상 작성하세요.").css("color", "red")
+                    $("#sub").prop("disabled", true)
+                } else {
+                    $("#passWar").text("사용 가능합니다.").css("color", "limegreen");
+                    $("#sub").prop("disabled", false)
+                }
+            })
+            
+            
+
+        });
+
     </script>
 </head>
 
 <body>
-<h1>정규표현식</h1>
-<hr>
-<br>
+    <h1>정규표현식</h1>
+    <hr>
+    <br>
+
+    <div id="divform">
+        <form action="#" method="get">
+            이름 : <input type="text" name="uname" id="uname"><br>
+            <span id=nameWar></span><br>
+            아이디 : <input type="text" name="uid" id="uid"><br>
+            <span id=idWar></span><br>
+            패스워드 : <input type="password" name="upass" id="upass"><br>
+            <span id=passWar></span><br>
+            
+            <input type="submit" value="가입하기" id="sub" disabled>
+        </form>
+    </div>
 </body>
 
 </html>

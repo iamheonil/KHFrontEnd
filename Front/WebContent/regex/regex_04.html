@@ -4,18 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+    <style type="text/css">
+        body {
+            width: 960px;
+        }
+
+        div form {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+        }
+    </style>
+
     <script type="text/javascript">
-    
-    
-    
+        $(document).ready(function() {
+
+            // jQuery 스타일로 이벤트 리스너 등록
+            //            $("#myform").on("submit", function() {
+            //                console.log("이벤트 발쌩!")
+            //                
+            ////                return false;
+            ////                return true;
+            //                
+            //            })
+
+            $("#myform").submit(function() {
+
+
+                //return false;
+
+                //            
+                //            // js 스타일로 이벤트 리스너 등록
+                //            myform.onsubmit = function() {
+                //                
+                //            }
+                //            
+                //            myform.addEventListener("submit", function() {
+                //                
+                //            })
+
+                var uidReg = /^[A-Z][A-Za-z0-9]{5,}$/
+                if (!uidReg.test($("#uid").val())) {
+                    alert("아이디를 잘 입력하세요")
+
+                    $("#uid").val("")
+                    $("#uid").focus();
+
+                    return false;
+                }
+
+                var upassReg = /^[A-Za-z0-9]{6,}$/
+                if (!upassReg.test($("#upass").val())) {
+                    alert("패스워드를 잘 입력하세요")
+
+                    $("#upass").val("")
+                    $("#upass").focus();
+
+                    return false;
+                }
+
+                if ($("#upass").val() != $("#upasschk").val()) {
+                    alert("패스워드 달라요")
+
+                    $("#upasschk").select();
+                    return false;
+                }
+            })
+
+        });
     </script>
 </head>
 
 <body>
-<h1>정규표현식</h1>
-<hr>
-<br>
-</body>
 
-</html>
+    <div>
+        <form id="myform" action="#" method="post">
+            <br>
+            아이디 : <input type="text" name="uid" id="uid"> <br>
+            <br>
+            패스워드 : <input type="password" name="upass" id="upass"> <br>
+            <br>
+            패스워드 확인 : <input type="password" name="upasschk" id="upasschk"> <br>
+            <br>
+
+            <input type="submit" value="가입하기">
+
+
+        </form>
+    </div>
+</body></html>
