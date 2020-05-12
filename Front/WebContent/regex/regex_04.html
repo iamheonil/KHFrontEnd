@@ -20,6 +20,7 @@
             height: 350px;
             margin: 0 auto;
         }
+
     </style>
 
     <script type="text/javascript">
@@ -76,8 +77,22 @@
                     return false;
                 }
             })
+            
+            // -----------------------------
+            
+            $("#btnCommnet").click(function() {
+//                comment.style.display = "inline-block"
+            
+            
+            // jQuery 방식
+//            $("#comment").show();
+//            $("#comment").hide();
+                
+                $("#comment").toggle();
+            })
 
         });
+
     </script>
 </head>
 
@@ -97,5 +112,10 @@
 
 
         </form>
+        <hr>
+        <button id="btnCommnet">자기소개</button><br><br>
+        <textarea rows="5" cols="50" id="comment" style="display: none"></textarea>
     </div>
-</body></html>
+</body>
+
+</html>
