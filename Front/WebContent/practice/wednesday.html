@@ -4,16 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <style type="text/css">
-        #unlist {
-            margin: 0 auto;
+        body {
+            width: 970px;
         }
 
-        * {
+        li {
+            list-style: none;
+        }
+
+        #test {
+            width: 350px;
+            margin: 0 auto;
             list-style: none;
         }
     </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+
+            // var nameExr
+
+            var idExr = /^[a-zA-Z0-9]{6,}$/
+            var passExr = /^[a-zA-Z0-9!@#]{6,12}$/
+
+            $("#uid").blur(function() {
+                if (!idExr.test($(this).val())) {
+                    alert("다시!")
+                }
+
+            })
+
+            $("#upass").blur(function() {
+                if (!passExr.test($(this).val())) {
+                    alert("다시!")
+                }
+
+            })
+            
+            $("#upasschk").blur(function() {
+                if($("#upass").val() == $(this).val()) {
+                    alert('통과')
+                }
+            })
+            
+            $("#self")
+            
+            $("#txtbtn").click(function() {
+                $("#self").toggle();
+            })
+        });
+    </script>
 </head>
 
 <body>
@@ -28,35 +73,36 @@
                     <tr>
                         <li>
                             <td>아이디</td>
-                            <td><input type="text" name="id"></td>
+                            <td><input type="text" name="id" id="uid"></td>
+                            <tr><td><span></span></td></tr>
                             <!--                    <tr>안녕하세요 &nbsp;&nbsp;&nbsp;</tr>-->
                         </li>
                     </tr>
                     <tr>
                         <li>
                             <td>비밀번호</td>
-                            <td><input type="password" name="password"></td>
+                            <td><input type="password" name="password" id="upass"></td>
                             <!--                    <tr>안녕하세요 &nbsp;&nbsp;&nbsp;</tr>-->
                         </li>
                     </tr>
                     <tr>
                         <li>
                             <td>비밀번호 확인</td>
-                            <td><input type="password" name="passwordC"></td>
+                            <td><input type="password" name="passwordC" id="upasschk"></td>
                             <!--                    <tr>안녕하세요 &nbsp;&nbsp;</tr>-->
                         </li>
                     </tr>
                     <tr>
                         <li>
                             <td>이메일</td>
-                            <td><input type="email" name="email"></td>
+                            <td><input type="email" name="email" id="uemail"></td>
                             <!--                    <tr>안녕하세요 &nbsp;&nbsp;&nbsp;</tr>-->
                         </li>
                     </tr>
                     <tr>
                         <li>
                             <td>휴대폰번호</td>
-                            <td><input type="tel" name="phone"></td>
+                            <td><input type="tel" name="phone" id="uphone"></td>
                             <!--                    <tr>안녕하세요 &nbsp;&nbsp;&nbsp;</tr>-->
                         </li>
                     </tr>
@@ -64,7 +110,13 @@
 
                 </ul>
             </table>
-            <br>
+            
+            
+            <hr><br>
+            <button id="txtbtn">기타란</button>
+            <br><br>
+            <textarea cols="50" rows="8" id="self" style="display: none"></textarea>
+            <br><br>
             <input type="submit" value="전송하기">
         </form>
     </div>

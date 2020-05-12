@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+
+    <style type="text/css">
+
+
+
+
+
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // 아이디는 4글자 이상 첫글자 대문자, 대소문자숫자 허용
+            // 이름은 한글만 2글자 이상
+            // 패스워드 8글자 이상 대소문자, 숫자, !@# 허용
+            // 이메일은 Normal
+
+            var idExr = /^[A-Z][a-zA-Z0-9$]{3,}/
+            var nameExr = /^[가-힣]{2,}$/
+            var passExr = /^[a-zA-Z0-9!@#]{8,}$/
+
+
+            $("#uid").blur(function() {
+                if (!idExr.test($(this).val())) {
+                    $("#idspan").text("아이디를 다시 입력해주세요.").css("color", "tomato")
+                } else {
+                    $("#idspan").text("멋진 아이디네요!").css("color", "limegreen")
+                }
+            })
+
+            $("#uname").blur(function() {
+                if (!nameExr.test($(this).val())) {
+                    $("#namespan").text("이름을 다시 입력해주세요.").css("color", "tomato")
+                } else {
+                    $("#namespan").text("확인 되었습니다.").css("color", "limegreen")
+                }
+            })
+
+            $("#upass").blur(function() {
+                if (!passExr.test($(this).val())) {
+                    $("#passspan").text("비밀번호를 다시 입력해주세요.").css("color", "tomato")
+                } else {
+                    $("#passspan").text("사용 가능한 비밀번호입니다.").css("color", "limegreen")
+                }
+            })
+
+            $("#upasschk").blur(function() {
+                if ($("#upass").val() == $(this).val()) {
+                    $("#passspanchk").text("비밀번호가 일치합니다!").css("color", "limegreen")
+                } else {
+                    $("#passspanchk").text("비밀번호가 일치하지 않습니다.").css("color", "tomato")
+                }
+            })
+
+            $("#uemail").blur(function() {
+                // 추가 구현 필요시 하면 돼  
+            })
+
+            $("#txtbtn").click(function() {
+                $("#self").toggle()
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>정규표현식 시험대비</h1>
+    <hr>
+    <br>
+
+    아이디 : <input type="text" id="uid" name="uid"> <br>
+    <span id="idspan"></span>
+    <br>
+
+    이름 : <input type="text" id="uname" name="uname"> <br>
+    <span id="namespan"></span>
+    <br>
+
+    패스워드 : <input type="password" id="upass" name="upass"> <br>
+    <span id="passspan"></span>
+    <br>
+
+    패스워드 확인 : <input type="password" id="upasschk" name="upasschk"> <br>
+    <span id="passspanchk"></span>
+    <br>
+
+    이메일 : <input type="email" id="uemail" name="uemail"> <br>
+    <span id="emailspan"></span>
+    <br>
+
+
+    <hr>
+
+    <button id="txtbtn"> 자기소개 </button>
+    <br><br>
+    <textarea rows="5" cols="50" id="self" style="display: none"></textarea>
+    <br><br>
+
+</body></html>
