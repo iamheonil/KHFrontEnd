@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+
+    <!-- 로컬 제이쿼리 -->
+    <!-- 3.4.1 버전이 없고 3.5.1 버전입니다ㅣ ㅠㅠ -->
+    <script type="text/javascript" src="../resources/js/jquery-3.5.1.js">
+    </script>
+
+    <style type="text/css">
+
+
+
+
+
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+            // 아이디는 4글자 이상, 대소문자 숫자
+            // 유효성 통과 못하면 4글자이상, 영문자 숫자만 가능 alert 와 동시에 값 삭제 다시 입력하게 포커스
+
+            var idReg = /^[a-zA-Z0-9]{4,}$/ // 대소문자, 숫자
+
+            // 비밀번호는 4글자 이상 대소문자 숫자
+            // 유효성 통과 못하면 4글자이상, 영문자 숫자만 가능 alert 와 동시에 비밀번호값 삭제 다시 입력하게 포커스
+
+            var passReg = /^[a-zA-Z0-9]{4,}$/ // 대소문자, 숫자
+
+            // 비밀번호 체크 입력하고 엔터 누르면 비밀번호와 체크 동일한지
+            // 일치하지 않으면 패스워드가 일치하지 않습니다 alert 비밀번호 확인 값 선택
+
+            $("#userid").blur(function() {
+                if (!idReg.test($(this).val())) {
+                    alert("4글자이상, 영문자 숫자만 가능")
+                    $("#userid").val("")
+                    $("#userid").focus()
+                } else {
+                    // console.log("통과")
+                }
+            })
+
+            $("#userpwd").blur(function() {
+                if (!passReg.test($(this).val())) {
+                    alert("4글자이상, 영문자 숫자만 가능")
+                    $("#userpwd").val("")
+                    $("#userpwd").focus()
+                } else {
+                    // console.log("통과")
+                }
+            })
+
+
+            $("#pw_check").keydown(function(e) {
+                if (e.keyCode == 13) {
+                    if ($("#userpwd").val() == $(this).val()) {
+                        alert("패스워드가 일치합니다.")
+                        $("#interests").focus();
+                    } else {
+                        alert("패스워드가 일치하지 않습니다")
+                        $("#pw_check").focus();
+                    }
+
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <hr>
+
+    <form action="#" method="post">
+        <ul>
+            <li> 아이디 : <input type="text" id="userid"> </li><br>
+            <li> 패스워드 : <input type="password" id="userpwd"> </li><br>
+            <li> 패스워드확인 : <input type="password" id="pw_check"> </li><br>
+
+            <li> 관심분야 : <select id="interests" name="interests" type="text">
+                    <option id="myinter">java</option>
+                    <option id="myinter">html, css</option>
+                    <option id="myinter">javascript, jquery</option>
+                    <option id="myinter">데이터베이스</option>
+                </select> </li><br>
+
+            <li> 이메일 : <input type="email" id="email"> </li><br>
+            <li> 지식정도 : <input type="range" id="ilevel" name="ilevel" min="1" max="3"> </li><br>
+            <li> 전화번호 : <select>
+                    <option id="010">010</option>
+                    <option id="011">011</option>
+                    <option id="016">016</option>
+                    <option id="019">019</option>
+                </select> - <input type="tel" id="utel2"> - <input type="tel" id="utel3"></li><br>
+            <li> <input type="file" id="upfile" name="upfile"> </li><br>
+            <div id="preview" style="width: 100px; height: 100px;"></div>
+            <li> <input type="button" id="sub" value="회원가입"> &nbsp; <input type="reset" value="취소"> </li><br>
+            <!-- input type 을 submit 으로 주게 되면 패스워드 확인란에서 엔터키로 유효성 검사를 할 때 일치여부와 상관없이 폼이 전송되어 초기화 되었습니다. 그래서 input type 을 button 으로 설정했습니다. -->
+
+        </ul>
+    </form>
+</body></html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+
+    <style type="text/css">
+
+
+
+
+
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+            $("#upload").change(function(e) {
+                //                console.log("파일 선택 됐음.")
+                //                
+                //                console.log(e)
+                //                
+                //                console.log(e.target)
+
+                var files = e.target.files;
+                //                console.log(files)
+                console.log(files[0])
+//                if (files[0].type.split("/")[0] != "image") {
+//
+//                }
+                if (!files[0].type.includes("image")) {
+                    alert("이미지가 아닙니다")
+                    e.target.value = null;
+                    return false;
+                }
+
+
+                // file 객체에는 파일의 정보가 들어있긴 하지만 해당 파일의 내용물(컨텐츠) 정보는 없다.
+
+                var reader = new FileReader();
+
+                //                reader.readAsText(files[0]);
+
+//              for(var i = 0) 
+                reader.readAsDataURL(files[0]); // Blob 또는 File 형식으로 읽기
+
+
+                // onload -> 로드(객체의 정보를 모두 읽어 메모리에 올림)가 완료된 시점에 
+                // 동작되도록 이벤트 리스너를 작성할 때 필요하다.
+                reader.onload = function(ev) {
+                    console.log(ev)
+
+                    console.log(ev.target)
+
+                    console.log("-=-=-=-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=")
+
+                    console.log(ev.target.result)
+
+                    //                    $("<img>").attr("src", ev.target.result).appendTo($("#preview"))
+                    // 이거는 파일을 넣는대로 추가되어 별로 좋지 않은 방법.
+
+
+                    $("#preview").html($("<img>").attr({
+                        "src": ev.target.result,
+                        "width": 300,
+                        "height": 200
+                    }));
+                }
+            })
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <!-- <input type="file" id="upload"> 
+    단일 파일 선택함, multiple 옵션 없음 -->
+
+    <input type="file" id="upload" multiple="multiple">
+    <!-- 멀티플 속성 - 여러개 선택 된다. -->
+
+    <div id="preview">
+
+
+
+    </div>
+
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+
+    <style type="text/css">
+
+
+
+
+
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // 영문자와 숫자로 8글자 이상 12글자 이하여야 가입 아니면 alert('영문자와 숫자로 8글자 이상 12글자 이하여야 합니다.')
+            var idReg = /^[a-zA-Z0-9]{8,12}$/
+
+            var passReg = /^[a-zA-Z0-9]{8,12}$/
+
+            // 암호(id="userpwd")는 8자리 이상 12글자이하이어야 가입, 조건을 만족하지 않은 경우 경고문구 alert('암호는 영문자와 숫자로 8글자이상 12글자 이하로 입력하세요')
+
+            $("#enrollform").submit(function() {
+
+//                $("#userid").blur(function() {
+                    if (!idReg.test($("#userid").val())) {
+                        alert('영문자와 숫자로 8글자 이상 12글자 이하여야 합니다.')
+                        $("#userid").focus()
+                        
+                        return false;
+                    }
+//                })
+
+//                $("#userpwd").blur(function() {
+                    if (!passReg.test($("#userpwd").val())) {
+                        alert('암호는 영문자와 숫자로 8글자이상 12글자 이하로 입력하세요')
+                        $("#userpwd").focus()
+
+                        return false;
+                    }
+//                })
+
+//                $("#pwdchk").blur(function() {
+                    if ($("#userpwd").val() == $("#pwdchk").val()) {
+                        console.log("일치합니다")
+                    } else {
+                        alert('패스워드확인란을 다시 확인해주세요.')
+                        $("#pwdchk").focus()
+
+                        return false;
+                    }
+//                })
+
+            })
+
+            $("#telnum").append("<option>010</option>")
+            $("#telnum").append("<option>011</option>")
+            $("#telnum").append("<option>016</option>")
+            $("#telnum").append("<option>019</option>")
+            
+            $("#knowlev").append("<option>상</option>")
+            $("#knowlev").append("<option>중</option>")
+            $("#knowlev").append("<option>하</option>")
+                               
+            $("#level").append("<option>고수</option>")        
+            $("#level").append("<option>하수</option>")
+            $("#level").append("<option>중수</option>")
+                    
+            $("#replybtn").click(function() {
+                $("#reply").toggle();
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <form id="enrollform" action="memberenroll" method="post">
+        <ul>
+            <li> 아이디 : <input type="text" id="userid"> </li><br>
+            <li> 패스워드 : <input type="password" id="userpwd"> </li><br>
+            <li> 패스워드확인 : <input type="password" id="pwdchk"> </li><br>
+            <li> 관심분야(java, html/css, javascript/jquery, 데이터베이스 중 다수 값이면 ,로 구분하여 작성 </li>
+            <input type="text" id="interest" placeholder="java, html/css, javascript/jquery, 데이터베이스 중 다수 값이면 ,로 구분" size="70"> <br><br>
+            <li> 이메일 : <input type="email" id="email"> </li><br>
+            <li> 지식정도(상, 중, 하로 작성) : 
+               <select id="knowlev">
+                </select><br><br>
+            <li>레벨 : <select id="level"></select></li>
+            <br>
+            <li> 전화번호 : <select id="telnum">
+
+                </select> 
+                - <input type="tel" id="utel2" size="6"> - <input type="tel" id="utel3" size="6"></li><br>
+            <li> <input type="submit" id="sub" value="회원가입"> &nbsp; <input type="reset" value="취소"> </li><br>
+        </ul>
+    </form>
+    <button id="replybtn">댓글 등록</button><br><br>
+    <textarea rows="5" cols="50" style="display: none;" id="reply"></textarea>
+
+
+</body></html>

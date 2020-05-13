@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+
+    <style type="text/css">
+        #maindiv {
+            line-height: 1.5em;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // 아이디 첫글자 대문자여야하며 대소문자 숫자 사용가능
+            // 패스워드 6글자 12글자 사이 대소문자 숫자 !@# 사용가능
+            // 패스워드 = 패스워드 체크
+            // 이름 한글로만 자음모음 개별사용불가 2글자 이상
+            // 전화번호는 숫자만 입력 가능하게
+
+            var idExr = /^[A-Z][a-zA-Z0-9]{5,}$/
+            var passExr = /^[a-zA-Z0-9!@#]{6,12}$/
+            var nameExr = /^[가-힣]{2,}$/
+            var telExr = /^[0-9]{9,}$/
+
+            $("#uid").blur(function() {
+
+                if (!idExr.test($(this).val())) {
+                    $("#idspan").text("다시 입력하세요.").css("color", "tomato")
+                } else {
+                    $("#idspan").text("완벽합니다!").css("color", "limegreen")
+                }
+
+            })
+
+            $("#upass").blur(function() {
+
+                if (!passExr.test($(this).val())) {
+                    $("#passspan").text("다시 입력하세요.").css("color", "tomato")
+                } else {
+                    $("#passspan").text("완벽합니다!").css("color", "limegreen")
+                }
+
+            })
+            
+            $("#upasschk").blur(function() {
+                if ($("#upass").val() == $(this).val()) {
+                    $("#passchkspan").text("완벽합니다!").css("color", "limegreen")
+                } else {
+                    $("#passchkspan").text("다시 입력하세요.").css("color", "tomato")
+                }
+            })
+
+            $("#uname").blur(function() {
+
+                if (!nameExr.test($(this).val())) {
+                    $("#namespan").text("다시 입력하세요.").css("color", "tomato")
+                } else {
+                    $("#namespan").text("완벽합니다!").css("color", "limegreen")
+                }
+
+            })
+
+            $("#utel").blur(function() {
+
+                if (!telExr.test($(this).val())) {
+                    $("#telspan").text("다시 입력하세요.").css("color", "tomato")
+                } else {
+                    $("#telspan").text("완벽합니다!").css("color", "limegreen")
+                }
+
+            })
+
+            $("#tb").click(function() {
+                $("#ta").toggle()  
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="maindiv">
+
+        아이디 : <input type="text" id="uid"><br>
+        <span id="idspan"></span><br>
+
+        패스워드 : <input type="text" id="upass"><br>
+        <span id="passspan"></span><br>
+
+        패스워드확인 : <input type="text" id="upasschk"><br>
+        <span id="passchkspan"></span><br>
+
+        이름 : <input type="text" id="uname"><br>
+        <span id="namespan"></span><br>
+
+        전화번호 : <input type="tel" id="utel"><br>
+        <span id="telspan"></span><br>
+
+
+    </div>
+    
+    <hr>
+    <br>
+    <button id="tb">자기소개란</button><br>
+    <br>
+    <textarea cols="50" rows="5" style="display: none" id="ta"></textarea>
+
+</body></html>

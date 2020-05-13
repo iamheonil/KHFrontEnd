@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- 로컬 자바스크립트 -->
+    <script type="text/javascript" src="../resources/js/test.js">
+    </script>
+
+
+    <style type="text/css">
+        bodty {
+            background: red;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+            $("#tr1").click(function() {
+                $("#tr1").css("background", "red")
+                $("#tr1").css("color", "white")
+                $("#s1").text($("#tdid1").text() + " /")
+                $("#s2").text($("#tdtitle1").text() + " /")
+                $("#s3").text($("#tdhit1").text() + " /")
+                $("#s4").text($("#tddate1").text())
+            })
+
+            $("#tr2").click(function() {
+                $("#tr2").css("background", "red")
+                $("#tr2").css("color", "white")
+                $("#s1").text($("#tdid2").text() + " /")
+                $("#s2").text($("#tdtitle2").text() + " /")
+                $("#s3").text($("#tdhit2").text() + " /")
+                $("#s4").text($("#tddate2").text())
+            })
+
+            $("#tr3").click(function() {
+                $("#tr3").css("background", "red")
+                $("#tr3").css("color", "white")
+                $("#s1").text($("#tdid3").text() + " /")
+                $("#s2").text($("#tdtitle3").text() + " /")
+                $("#s3").text($("#tdhit3").text() + " /")
+                $("#s4").text($("#tddate3").text())
+            })
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>조회수</td>
+            <td>작성일자</td>
+        </tr>
+
+        <tr id="tr3">
+            <td id="tdid3">3</td>
+            <td id="tdtitle3">3번제목</td>
+            <td id="tdhit3">0</td>
+            <td id="tddate3">11-07-13</td>
+        </tr>
+
+        <tr id="tr2">
+            <td id="tdid2">2</td>
+            <td id="tdtitle2">2번제목</td>
+            <td id="tdhit2">0</td>
+            <td id="tddate2">11-07-12</td>
+        </tr>
+
+        <tr id="tr1">
+            <td id="tdid1">1</td>
+            <td id="tdtitle1">1번제목</td>
+            <td id="tdhit1">0</td>
+            <td id="tddate1">11-07-11</td>
+        </tr>
+    </table>
+    선택된 행 : <span id="s1">/</span> <span id="s2">/</span> <span id="s3">/</span>
+    <span id="s4">/</span>
+
+</body></html>
