@@ -32,7 +32,7 @@ public class OjdbcEx_01 {
 		// 2. DB Connection
 			try {
 				conn = DriverManager.getConnection
-						("jdbc:oracle:thin:@192.168.120.13:1521:xe", "system", "oracle");
+						("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
 				
 		// 3. Query 수행 Object
 				st = conn.createStatement();
