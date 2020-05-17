@@ -7,9 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import dao.face.userDao;
 import dto.User;
+import jdk.nashorn.internal.ir.SetSplitState;
 
 public class userDaoImpl implements userDao {
 
@@ -26,6 +28,8 @@ public class userDaoImpl implements userDao {
 //	private static Statement st = null; // SQL Statement
 	private static PreparedStatement ps = null; // SQL PreparedStatement
 	private static ResultSet rs = null; // SQL Result
+
+	Scanner sc = new Scanner(System.in);
 
 	public userDaoImpl() {
 		try {
@@ -74,6 +78,7 @@ public class userDaoImpl implements userDao {
 				list.add(user);
 
 			}
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -97,9 +102,10 @@ public class userDaoImpl implements userDao {
 	}
 
 	@Override
-	public List<User> selectByIdx() {
+	public List<User> selectByIdx(int idx) {
+
 		String sql = "";
-		sql += "SELECT * FROM userTest WHERE idx like 20";
+		sql += "SELECT * FROM userTest WHERE idx like " + idx;
 
 		// 결과 저장 될 List
 		List<User> list = new ArrayList<User>();
@@ -156,7 +162,7 @@ public class userDaoImpl implements userDao {
 		// userId : A123
 		// name : Alice
 
-		sql += "INSERT INTO userTest(idx, userid, name) VALUES (" + "userTest_SQ.nextval" + ", A123, Alice)";
+		sql += "INSERT INTO userTest(idx, userid, name) VALUES (userTest_SQ.nextval, 'A123', 'Alice')";
 
 		try {
 			ps = conn.prepareStatement(sql);
@@ -185,9 +191,10 @@ public class userDaoImpl implements userDao {
 	}
 
 	@Override
-	public List<User> deleteByIdx() {
+	public List<User> deleteByIdx(int idx) {
 		String sql = "";
-		sql += "DELETE * FROM EMP ORDER BY EMPNO";
+//		SELECT * FROM userTest WHERE idx like
+		sql += "DELETE FROM userTest WHERE idx=" + idx;
 
 		// 결과 저장 될 List
 		List<User> list = new ArrayList<User>();

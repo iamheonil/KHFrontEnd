@@ -19,11 +19,9 @@ public class UserEx {
 //		for (User u : list) {
 //			System.out.println(u);
 //		}
-		// 완료
+//		System.out.println("\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		// ----------------- 완료
 		
-		
-		// -----------------
-
 		// --- 유저 삽입 ---
 		// 유저 객체를 생성하고
 		// 유저 정보를 객체에 입력하고
@@ -34,19 +32,20 @@ public class UserEx {
 
 //		User insertUser = null;
 //		userDao.insertUser(insertUser);
-//		//-----------------
+//		//----------------- 완료
 
 		// --- 유저 조회 ---
-		List<User> selectUser = userDao.selectByIdx();
-		System.out.println(selectUser);
-		// -----------------
+//		List<User> selectUser = userDao.selectByIdx(20);
+//		System.out.println(selectUser);
+		// ----------------- 완료
 
 		// --- 유저 삭제 ---
-//		userDao.deleteByIdx(20);
+//		userDao.deleteByIdx(47);
+		// ----------------- 완료
 //				
 //		// 유저 조회 - 삭제됐는지 확인하는 용도(null나와야함)
-//		User resultUser = userDao.selectByIdx(20);
-//		System.out.println(resultUser);
+		List<User> resultUser = userDao.selectByIdx(47);
+		System.out.println(resultUser);
 		// -----------------
 	}
 }

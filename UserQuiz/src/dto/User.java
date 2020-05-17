@@ -6,9 +6,11 @@ public class User {
 	private String userid;
 	private String name;
 
+	
+
 	@Override
 	public String toString() {
-		return "User [idx=" + idx + ", name=" + name + "]";
+		return "User [idx=" + idx + ", userid=" + userid + ", name=" + name + "]";
 	}
 
 	public int getIdx() {
