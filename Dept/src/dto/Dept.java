@@ -2,37 +2,37 @@ package dto;
 
 public class Dept {
 
-	private int DEPTNO;
-	private String DNAME;
-	private String LOC;
+	private int deptno;
+	private String dname;
+	private String loc;
 
 	@Override
 	public String toString() {
-		return "Dept [DEPTNO=" + DEPTNO + ", DNAME=" + DNAME + ", LOC=" + LOC + "]";
+		return "Dept [deptno=" + deptno + ", dname=" + dname + ", loc=" + loc + "]";
 	}
 
-	public int getDEPTNO() {
-		return DEPTNO;
+	public int getDeptno() {
+		return deptno;
 	}
 
-	public void setDEPTNO(int dEPTNO) {
-		DEPTNO = dEPTNO;
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
 	}
 
-	public String getDNAME() {
-		return DNAME;
+	public String getDname() {
+		return dname;
 	}
 
-	public void setDNAME(String dNAME) {
-		DNAME = dNAME;
+	public void setDname(String dname) {
+		this.dname = dname;
 	}
 
-	public String getLOC() {
-		return LOC;
+	public String getLoc() {
+		return loc;
 	}
 
-	public void setLOC(String lOC) {
-		LOC = lOC;
+	public void setLoc(String loc) {
+		this.loc = loc;
 	}
 
 }
