@@ -8,7 +8,9 @@
     <!-- CDN -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- 로컬 자바스크립트 -->
-    <script type="text/javascript" src="../resources/js/test.js">
+    <script type="text/javascript" src="../resources/js/test.js"></script>
+    <script type="text/javascript" src="../resources/">
+
     </script>
 
 
@@ -35,9 +37,9 @@
                 var files = e.target.files;
                 //                console.log(files)
                 console.log(files[0])
-//                if (files[0].type.split("/")[0] != "image") {
-//
-//                }
+                //                if (files[0].type.split("/")[0] != "image") {
+                //
+                //                }
                 if (!files[0].type.includes("image")) {
                     alert("이미지가 아닙니다")
                     e.target.value = null;
@@ -51,7 +53,7 @@
 
                 //                reader.readAsText(files[0]);
 
-//              for(var i = 0) 
+                //              for(var i = 0) 
                 reader.readAsDataURL(files[0]); // Blob 또는 File 형식으로 읽기
 
 
@@ -80,6 +82,7 @@
 
 
         });
+
     </script>
 </head>
 
@@ -98,4 +101,6 @@
 
     </div>
 
-</body></html>
+</body>
+
+</html>

@@ -14,6 +14,7 @@ public class OjdbcEx_01 {
 		// System.out.println("Hello Java");
 
 		// 1. JDBC Load
+		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
